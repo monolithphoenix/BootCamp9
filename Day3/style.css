@@ -1,0 +1,33 @@
+
+.conteiner {
+    width: 700px;
+    margin: auto;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 500px;
+    align-content: space-around;
+    flex-direction ;
+}
+
+.box1, .box2, .box3 {
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    background-color: violet;
+}
+
+.box2 {
+    background-color: darkturquoise;
+}
+
+.box3 {
+    background-color: greenyellow;
+}
