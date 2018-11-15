@@ -11,36 +11,13 @@ header, main, footer {
     margin: 0 auto;
 }
 
-header: {
+.header {
+    padding-top: 40px;
+    padding-bottom: 105px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-}
-
-h1: {
-    font-family: 'Roboto-Light', sans-serif;
-}
-
-h1::first-letter {
-    color: #1abc9c;
-}
-
-h2 {
-    font-family: 'Roboto-Black', sans-serif;
-    text-align: center;
-}
-
-h2::after {
-    content: "";
-    display: block;
-    margin: auto;
-    width: 164px;
-    height: 7px;
-    background-color: #1abc9c;
-    margin: 32px auto;
-
-}
-.upper {
-    text-transform: uppercase;
+    align-items: center;
 }
 
 .menu {
@@ -52,24 +29,72 @@ h2::after {
 
 .menu-link {
     text-decoration: none;
+    text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+    font-size: 14px;
     color: #0f0101;
 }
 
-.block {
+.menu-link:hover {
+    color: #1abc9c;
+}
+
+/* Заголовок над карточкоми товаров */
+.products-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 30pt;
+    text-align: center;
+    text-transform: uppercase;
+    color: #515151;
+}
+
+.products-title::after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 164px;
+    height: 7px;
+    background-color: #1abc9c;
+    margin: 32px auto;
+}
+
+/* Секция карточек товаров */
+.product-list {
+    list-style: none;
+    width: 1110px;
     display: flex;
+    justify-content: space-between;
+}
+
+/* Свойства карточки товара */
+.prod-item {
+    width: 255px;
+    height: 325px;
+    border: 1px solid red;
+}
+
+.prod-paragraf {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
     width:  255px;
+    height: 40px;
+    display: flex;
+    align-items: center;
     background-color: #323232;
 }
 
-.block:hover {
+.prod-paragraf:hover {
     background-color: #1abc9c;
 }
 
 .name, .price {
-    padding: 10px;
-    font-size: 24px;
+    /* padding: 10px;
+    font-size: 24px; */
     color: #ffffff;
     font-weight: 700;
     
@@ -77,14 +102,12 @@ h2::after {
 
 .name {
     width: 201px;
+    height: 40px;
     }
 
 .price {
     width: 54px;
+    height: 40px;
     text-align: center;
     background-color: rgba(255, 255, 255, .44);
 }
-
-/* .price {
-    opacity: 0.44;
-} */
