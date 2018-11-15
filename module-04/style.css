@@ -1,0 +1,90 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:300,400,900');
+
+header, main, footer {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+header: {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1: {
+    font-family: 'Roboto-Light', sans-serif;
+}
+
+h1::first-letter {
+    color: #1abc9c;
+}
+
+h2 {
+    font-family: 'Roboto-Black', sans-serif;
+    text-align: center;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 164px;
+    height: 7px;
+    background-color: #1abc9c;
+    margin: 32px auto;
+
+}
+.upper {
+    text-transform: uppercase;
+}
+
+.menu {
+    list-style: none;
+    width: 467px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-link {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #0f0101;
+}
+
+.block {
+    display: flex;
+    width:  255px;
+    background-color: #323232;
+}
+
+.block:hover {
+    background-color: #1abc9c;
+}
+
+.name, .price {
+    padding: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 700;
+    
+}
+
+.name {
+    width: 201px;
+    }
+
+.price {
+    width: 54px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .44);
+}
+
+/* .price {
+    opacity: 0.44;
+} */
