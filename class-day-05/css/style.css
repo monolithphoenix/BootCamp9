@@ -89,15 +89,19 @@
 
 /* Оформление кнопки "LEARN MORE" */
 .more {
+    display: inline-block;
     font-family: 'Hammersmith One', sans-serif;
     font-size: 16px;
     color: #00e0d0;
     text-decoration: none;
-    margin-top: 50px;
     border: 1px solid #00e0d0;
     border-radius: 2px;
     padding: 15px;
     line-height: 10px; 
+}
+
+.slider .more {
+    margin-top: 50px;
 }
 
 .dots {
@@ -106,6 +110,82 @@
 /* Конец оформления содержимого .conteiner */
 
 /* Начало оформления содержимого .main */
+/* Оформления содержимого контейнера .our-story */
 .our-story {
+    width: 873px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 70px auto;
+    line-height: 16px; 
+}
+
+.story-content {
+    width: 538px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.story-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 28px;
+    line-height: 1.5;
+    letter-spacing: .3px;
+}
+
+.story-content .more {
+    margin-top: 31px;
+}
+
+/* Оформления содержимого контейнера .player */
+.player {
+    background-image: url(../img/bg2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* height: 670px; */
+    text-align: center;
+    padding: 202px 0;
+}
+
+.player-button {
+    background: transparent;
+    border: none;
+}
+
+.player-text {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 16px;
+    color: #fff;
+    padding-top: 34px;
+}
+
+/* Оформления содержимого контейнера .expertise */
+.expertise {
 
 }
+/* 
+
+.block-item {
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.block-item:nth-last-child(3n) {
+    border-right: none;
+}
+
+.block-item:nth-last-child(-n+3) {
+    border-boton: none;
+}
+ 
+*/
