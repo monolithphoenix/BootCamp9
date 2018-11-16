@@ -1,17 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Playfair+Display:400,900|Roboto:300,400,900');
+
 *{
     margin: 0;
     padding: 0;
 }
 
+/* Начало оформления содержимого .conteiner */
 .container {
     background-image: url(../img/bg1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 500px;
+    height: 670px;
+}
+
+.header {
+    padding-top: 15px;
+}
+
+.slider-title {
+    margin-top: 163px;
 }
 
 .header, .slider {
     width: 940px;
     margin: 0 auto;
+}
+
+.header, .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {    
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 13px;
+    width: 526px;
+    list-style: none;
+}
+
+.menu a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #00e0d0;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #fff;
+}
+
+.slider-title::after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 1px;
+    background-color: #00e0d0;
+    margin-top: 21px;
+}
+
+.slider-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 30px;
+    max-width: 771px;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: .7px;
+}
+
+/* Оформление кнопки "LEARN MORE" */
+.more {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 16px;
+    color: #00e0d0;
+    text-decoration: none;
+    margin-top: 50px;
+    border: 1px solid #00e0d0;
+    border-radius: 2px;
+    padding: 15px;
+    line-height: 10px; 
+}
+
+.dots {
+    margin-top: 127px;
+}
+/* Конец оформления содержимого .conteiner */
+
+/* Начало оформления содержимого .main */
+.our-story {
+
 }
