@@ -4,19 +4,29 @@
     border: 3px solid #000;
 }
 
+.wrapper {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border: 3px solid #000;
+    margin: 0 auto;
+    background-color: lightgreen
+}
+
 .block1 {
     background-color: red;
     position: absolute;
     top: 0;
     left: 50px;
-    z-index: 3;
+    z-index: -3;
 }
 
 .block2 {
     background-color: yellow;
     position: absolute;;
-    top: 0;
-    right: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .block3 {
@@ -25,13 +35,4 @@
     bottom: 40%;
     right: 75px;
     z-index: -3;
-}
-
-.wrapper {
-    position: relative;
-    width: 600px;
-    height: 600px;
-    border: 3px solid #000;
-    margin: 0 auto;
-    background-color: lightgreen
 }
