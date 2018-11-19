@@ -69,3 +69,11 @@
     right: 0;
     z-index: 100;
 }
+
+.submenu, .sub-submenu {
+    display: none;
+}
+
+.goods:hover .submenu {
+    display: block;
+}
