@@ -1,10 +1,134 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:300,900');
 
 *{
     margin: 0;
     padding: 0;
 }
 
+.header {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 38px;
+    padding-bottom: 32px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    width: 467px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0f0101;
+}
+
+.menu-link:hover {
+    color: #1abc9c;
+}
+
+
+/* Оформление слайдера */
+.slider{
+    position: relative;
+    background-image: url(../img/slide.png);
+    height: 600px;
+    margin: 0 auto;
+    z-index: -2;
+    text-align: center;
+}
+ .slider::before{
+    content: '';
+	position: absolute;
+	top: 0px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.slider h2{
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 60px;
+    color: #fff;
+    text-align: left;
+}
+
+.slider p{
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
+    text-align: left;
+    padding-top: 30px;
+}
+
+/* Оформление секции .new-collection */
+.new-collection{
+    background-color: #e9f0fd;
+    padding-top: 101px;
+    padding-bottom: 100px;
+}
+
+.new-collection h2{
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 48px;
+    color: rgba(81, 81, 81, 255);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 34px;
+}
+
+.new-collection h2::after{
+    content: "";
+    display: block;
+    margin: auto;
+    width: 164px;
+    height: 7px;
+    background-color: #1abc9c;
+    margin-top: 32px;
+}
+
+.cards{
+    height: 322px;
+    width: 1111px;
+    margin: auto;
+    border: 1px solid red;
+    margin-top: 80px;
+}
+
+.item-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+}
+
+.item1, .item2, .item3, .item4{
+    width: 255px;
+    height: 322px;
+    border: 1px dashed blue;
+
+}
+
+/* Оформление секции .footer */
 .footer{
     padding: 38px;
     font-family: 'Open Sans';
