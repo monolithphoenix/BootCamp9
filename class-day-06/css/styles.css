@@ -22,6 +22,7 @@
 }
 
 .block2 {
+    display: none;
     background-color: yellow;
     position: absolute;;
     left: 50%;
@@ -35,4 +36,8 @@
     bottom: 40%;
     right: 75px;
     z-index: -3;
+}
+
+.hover:hover .block2{
+    display: block;
 }
