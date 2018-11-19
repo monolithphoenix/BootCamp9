@@ -28,6 +28,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 50%;
 }
 
 .block3 {
@@ -40,4 +41,31 @@
 
 .hover:hover .block2{
     display: block;
+}
+
+.header, .footer {
+    font-size: 36px;
+    text-align: center;
+    /* position: fixed; */
+    padding:  10px;
+    background-color: blanchedalmond;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer {
+    bottom: 0;
+}
+
+.totop {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+
+    border: 1px solid black;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
 }
