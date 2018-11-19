@@ -13,6 +13,7 @@ body {
     left: 0;
     overflow: hidden;
     z-index: -100;
+    background: black;
 }
 
 .bg-video::before {
@@ -43,12 +44,12 @@ body {
     text-align: center;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%); 
     transform: translate(-50%, -50%);
 }
 
 .content h1 {
-    font-size: 48px;
+    font-size: 36px;
     color: white;
 }
 
@@ -56,5 +57,5 @@ body {
     font: 300 18px "Roboto", sans-serif;
     color: white;
     display: block;
-    margin: 100px auto;
+    margin: 60px auto;
 }
