@@ -6,12 +6,26 @@
 
 .block1 {
     background-color: red;
+    /* position: relative;
+    top: 30px;
+    left: 5px; */
 }
 
 .block2 {
     background-color: yellow;
+    position: absolute;;
+    top: 20px;
+    right: 0;
 }
 
 .block3 {
     background-color: green;
+    /* position: relative;
+    top: -120px;
+    left: 15px; */
+}
+
+.wrapper {
+    position: relative;
+
 }
