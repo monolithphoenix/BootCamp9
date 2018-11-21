@@ -42,24 +42,15 @@
 
 /* Оформление секции .slider */
 .slider{
-    position: relative;
-    background-image: url(../img/slide.png);
-    height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/slide.png);
+    /* height: 600px; */
     margin: 0 auto;
     z-index: -2;
     text-align: center;
     display: flex;
     align-items: center;
-}
- .slider::before{
-    content: '';
-	position: absolute;
-	top: 0px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    padding: 218px 0 254px;
+    background-size: cover;
 }
 
 .slider-block{
@@ -68,19 +59,19 @@
     align-items: flex-end;
 }
 
-.slider-block::before, .slider-block::after{
+.left, .right{
     background-color: rgba(26,188,156,.5);
     padding: 30px 41px 36px 41px;
 }
 
-.slider-block:hover::before, .slider-block:hover::after{
+.left:hover, .right:hover{
     background-color: rgba(26,188,156,1);}
 
-.slider-block::before{
+.left{
     content: url(../img/left.png);
 }
 
-.slider-block::after{
+.right{
     content: url(../img/right.png);
 }
 
