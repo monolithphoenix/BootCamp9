@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu:300');
 *{
     margin: 0;
     padding: 0;
@@ -5,4 +6,63 @@
 
 .header, .main{
     width: 900px;
+    margin: 0 auto;
+}
+
+.nav{
+    margin: 77px 0 103px 0;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.menu-item a{
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: rgba(98, 98, 98, 255);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 11px;
+}
+
+.menu-item:hover a{
+    color: #03a9f4;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section{
+    width: 420px;
+}
+
+.index{
+    margin-top: 32px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: rgba(180, 173, 158, 255);
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.section h2{
+    margin-top: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: rgba(98, 98, 98, 255);
+}
+
+.text{
+    margin-top: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: rgba(98, 98, 98, 255);
+    height: 55px;
 }
