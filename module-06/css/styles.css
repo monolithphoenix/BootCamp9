@@ -2,3 +2,47 @@
     margin: 0;
     padding: 0;
 }
+
+.header{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Оформление Header */
+.logo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #95e1d3;
+}
+
+.header{
+    padding-top: 28px;
+    padding-bottom: 14px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+}
+
+.menu{
+    list-style: none;
+    width: 490px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 14;
+    font-size: 14px;
+    color: #95e1d3;
+}
+
+.menu-link:hover{
+    color: #f38181;
+    transition-property: 
+    transition-duration: 2s;
+}
