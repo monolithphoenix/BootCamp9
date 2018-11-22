@@ -2,3 +2,52 @@
     margin: 0;
     padding: 0;
 }
+
+.contactus{
+    background-image: url(../img/bgi.png);
+    padding: 138px 0 63px;
+}
+.contactus>.box{
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+    width: 900px;
+    display: grid;
+    color:#3c3c3c;
+    border: 2px solid #3c3c3c;
+}
+
+.contactus h2{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    position: relative;
+    background: transparent;
+    padding: 0 100px;
+    top: -20px;
+}
+
+.contactus p{
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-align: center;
+    width: 530px;
+    padding-top: 58px;
+    margin: 0 auto;
+}
+
+.contactus button{
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #fff;
+    background-color: #3c3c3c;
+    padding: 24px 138px;
+    border: none;
+    cursor: pointer;
+    margin: 42px auto 50px;
+}
