@@ -2,21 +2,26 @@
     margin: 0;
     padding: 0;
 }
+/* Fonts stylesheets */
+.contactus, .footer{
+    font-family: 'Lato', sans-serif;
+}
 
 .contactus{
     background-image: url(../img/bgi.png);
-    padding: 138px 0 63px;
+    background-size: cover;
+    padding: 134px 0 63px;
 }
-.contactus>.box{
-    font-family: 'Lato', sans-serif;
-    margin: auto;
-    width: 900px;
+
+.contactus-box{
+    margin: 0 auto ;
+    width: 896px;
     display: grid;
     color:#3c3c3c;
     border: 2px solid #3c3c3c;
 }
 
-.contactus h2{
+.contactus-legend{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 30px;
@@ -25,10 +30,9 @@
     position: relative;
     background: transparent;
     padding: 0 100px;
-    top: -20px;
 }
 
-.contactus p{
+.contactus-paragraph{
     font-weight: 300;
     font-size: 16px;
     letter-spacing: normal;
@@ -38,7 +42,7 @@
     margin: 0 auto;
 }
 
-.contactus button{
+.contactus-button{
     font-family: inherit;
     text-transform: uppercase;
     font-weight: 400;
@@ -46,8 +50,23 @@
     letter-spacing: 4px;
     color: #fff;
     background-color: #3c3c3c;
-    padding: 24px 138px;
+    padding: 19px 128px;
     border: none;
     cursor: pointer;
     margin: 42px auto 50px;
+}
+
+/* Footer stylesheets */
+.footer{
+    margin: 0 auto;
+    padding-bottom: 63px;
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright{
+    font-weight: 400;
+    font-size: 14px;
 }
