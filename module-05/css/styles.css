@@ -5,7 +5,11 @@
     padding: 0;
 }
 
-.header, .slider-block {
+h1{
+    font-size: 0;
+}
+
+.header, .slider-block, .footer p {
     width: 1110px;
     margin: 0 auto;
 }
@@ -43,7 +47,7 @@
 /* Оформление секции .slider */
 .slider{
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/slide.png);
-    padding: 218px 0 254px;
+    padding: 218px 0 256px;
     background-size: cover;
 }
 
@@ -258,12 +262,13 @@
 
 /* Оформление секции .footer */
 .footer{
-    padding: 38px;
+    padding: 38px 0 33px;
     font-family: 'Open Sans';
     font-size: 16px;
     color: rgba(254, 254, 254, 1);
     text-align: center;
     background-color: #323232;
+    line-height: 17px;
 }
 
 .footer a{
