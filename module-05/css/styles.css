@@ -43,12 +43,6 @@
 /* Оформление секции .slider */
 .slider{
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/slide.png);
-    /* height: 600px; */
-    margin: 0 auto;
-    z-index: -2;
-    text-align: center;
-    display: flex;
-    align-items: center;
     padding: 218px 0 254px;
     background-size: cover;
 }
@@ -73,10 +67,6 @@
 
 .right{
     content: url(../img/right.png);
-}
-
-.tours{
-    display: block
 }
 
 .tours h2{
@@ -126,7 +116,6 @@
 .cards{
     width: 1111px;
     margin: auto;
-    /* border: 1px solid red; */
     margin-top: 80px;
 }
 
@@ -140,7 +129,6 @@
 /* Оформление карточки товара */
 .product-item{
     width: 255px;
-    /* border: 1px dotted blue; */
 }
 
 .prod-link{
