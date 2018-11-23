@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Global fonts stylesheets */
+.tiles, .contactus, .footer{
+    font-family: 'Lato', sans-serif;
+    width: 1920px;
+}
+
+/* Section .tiles stylesheets */
+.tiles-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tiles-item{
+    position: relative;
+    font-size: 0;
+    cursor: pointer;
+    transition-duration: 5s;
+}
+
+.tiles-item:nth-child(-n+3){
+    margin-bottom: 10px;
+}
+
+.tiles-item:hover{
+    transform: scale(.9, .9);
+    transition-duration: 1s;
+    z-index: 1;
+}
+
+.tiles-title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+    position: absolute;
+    left: 43px;
+    bottom: 43px;
+}
+
+/* Section .contactus stylesheets */
+.contactus{
+    /* background-image: url(../img/bgi.png);
+    background-size: cover; */
+    padding: 134px 0 63px;
+}
+
+.contactus-box{
+    margin: 0 auto ;
+    width: 896px;
+    display: grid;
+    color:#3c3c3c;
+    border: 2px solid #3c3c3c;
+}
+
+.contactus-legend{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    position: relative;
+    background: transparent;
+    padding: 0 100px;
+}
+
+.contactus-paragraph{
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-align: center;
+    width: 530px;
+    padding-top: 58px;
+    margin: 0 auto;
+}
+
+.contactus-button{
+    background-color: #3c3c3c;
+    padding: 19px 128px;
+    border: none;
+    cursor: pointer;
+    margin: 42px auto 50px;
+    transition-duration: 2s;
+}
+
+.contactus-button:hover{
+    transform: scale(.8, .8);
+    transition-duration: 1s;
+}
+
+.contactus-button-text{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #fff;
+    transition-duration: 2s;
+}
+
+.contactus-button:hover .contactus-button-text{
+    transform: rotateY(360deg) scale(1.5, 1.5);
+    transition-duration: 1s;
+}
+/* Footer stylesheets */
+.footer-box{
+    margin: 0 auto;
+    padding-bottom: 63px;
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright{
+    font-weight: 400;
+    font-size: 14px;
+}
