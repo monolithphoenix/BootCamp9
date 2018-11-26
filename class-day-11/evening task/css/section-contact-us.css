@@ -6,28 +6,115 @@
 .contact-us{
     margin: auto;
     background-color: #161f32;
+    font-family: 'Lato', sans-serif;
     color: #fff;
 }
 
 .contact-us-block{
     width: 1150px;
     margin: auto;
+    padding: 67px 0 26px;
 }
 
 .contact-us-block h2{
-    padding-top: 67px;
+    font-size: 30px;
 }
 
 .contact-us-block h3{
     padding-top: 24px;
+    font-size: 20px;
 }
 
-.contact-us-block h3::after{
+.contact-us-block p::before{
     content: "";
     background-image: url("../img/Composed-layer.png");
-    padding-top: 24px;
+    /* background: no-repeat; */
+    display: block;
+    width: 571px;
+    height: 16px;
+    margin: 24px auto;
+    /* padding-top: 24px; */
 }
 
 .contact-us-block p{
-    padding-top: 25px;
+    width: 758px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.contact-us-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-us-cards{
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    width: 1170px;
+    list-style: none;
+}
+
+.contact-us-cards-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li>input[type="text"], li>input[type="email"]{
+    display: block;
+    width: 368px;
+    height: 65px;
+    background-color: #161f32;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    font-style: italic;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 57px auto 0;
+
+}
+
+textarea[name=comments]{
+    display: block;
+    width: 1170px;
+    height: 211px;
+    background-color: #161f32;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-style: italic;
+    padding: 21px;
+    margin: 32px auto 26px;
+}
+
+/* #messege {
+    display: block;
+    width: 1170px;
+    height: 211px;
+    background-color: #161f32;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-style: italic;
+    padding: 20px;
+    margin: 32px auto 26px;
+} */
+
+input[type="submit"] {
+    display: block;
+    width: 235px;
+    height: 68px;
+    background-color: #fff;
+    color: #3d506f;
+    border: none;
+    font-family: inherit;
+    font-size: 20px;
+    margin: 32px auto 0px;
 }

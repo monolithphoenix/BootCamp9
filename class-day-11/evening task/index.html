@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/section-contact-us.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">    <link rel="stylesheet" href="css/section-contact-us.css">
     <title>Document</title>
 </head>
 <body>
     <section class="contact-us">
         <div class="contact-us-block">
-            <h2>FEEL FREE TO ASK US ANYTHING</h2>
-            <h3>CONTACT US</h3>
-            <!-- <img src="./img/Composed-layer.png" alt=""> -->
-            <p>Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tinci dunt. Quisque velit nisi, pretium ut lacinia in, elemena porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lac inia in, elementum id enim. Vestibulum ac diam sit anet.
-            </p>
-            <ul class="contact-us-cards">
-                <il class="contact-us-cards-item"></il>
-                <il class="contact-us-cards-item"></il>
-                <il class="contact-us-cards-item"></il>
-            </ul>
-            <input type="text" name="anyText">
-            <input type="button" value = "Send Message">
+            <div class="contact-us-box">
+                <h2>FEEL FREE TO ASK US ANYTHING</h2>
+                <h3>CONTACT US</h3>
+                <!-- <img src="./img/Composed-layer.png" alt=""> -->
+                <p>Donec sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tinci dunt. Quisque velit nisi, pretium ut lacinia in, elemena porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lac inia in, elementum id enim. Vestibulum ac diam sit anet.</p>
+            </div>
+            <form action="#" method="get">
+                <ul class="contact-us-cards">
+                    <li class="contact-us-cards-item">
+                        <img src="./img/icon-addresse.svg" alt="">
+                        <h3>ADDRESSE</h3>
+                        <h3>Awesome Street 234,NY</h3>
+                        <input type="text" value="Enter Name">
+                    </li>
+                    <li class="contact-us-cards-item">
+                        <img src="./img/icon-mail.svg" alt="">
+                        <h3>MAIL</h3>
+                        <h3>articamail@mail.com</h3>
+                        <input type="email" value="Enter Mail">
+                    </li>
+                    <li class="contact-us-cards-item">
+                        <img src="./img/icon-phone.svg" alt="">
+                        <h3>PHONE</h3>
+                        <h3>(000)123-456-789</h3>
+                        <input type="text" value="Enter Subject"> 
+                    </li>
+                </ul>
+
+                <textarea name = "comments" placeholder="Enter Message">Enter Message
+                </textarea>
+
+                <!-- <input type="text" value="Enter Message" id="messege"> -->
+                
+                <input type="submit" value = "Send Message" id="send">
+            </form>
         </div>
     </section>
 </body>
