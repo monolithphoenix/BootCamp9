@@ -4,13 +4,13 @@
     padding: 0;
 }
 
-.header, .main{
+.header, .main, .footer{
     width: 900px;
     margin: 0 auto;
 }
 
-.nav{
-    margin: 77px 0 103px 0;
+.header{
+    margin: 77px auto 103px;
 }
 .menu{
     list-style: none;
@@ -43,6 +43,10 @@
     width: 420px;
 }
 
+.tab{
+    margin-top: 130px;
+}
+
 .index{
     margin-top: 32px;
     font-family: 'Ubuntu', sans-serif;
@@ -65,4 +69,18 @@
     font-size: 14px;
     color: rgba(98, 98, 98, 255);
     height: 55px;
+}
+
+.footer{
+    padding: 64px 0 70px;
+}
+.more{
+    width: 164px;
+    height: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #626262;
+    background-color: transparent;
+    border: 1px solid #626262;
+    margin: 0 auto;
 }
