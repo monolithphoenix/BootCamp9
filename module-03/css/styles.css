@@ -75,6 +75,7 @@
     padding: 64px 0 70px;
 }
 .more{
+    display: block;
     width: 164px;
     height: 60px;
     font-family: 'Playfair Display', serif;
@@ -83,4 +84,8 @@
     background-color: transparent;
     border: 1px solid #626262;
     margin: 0 auto;
+}
+
+.more:hover{
+    cursor: pointer;
 }
