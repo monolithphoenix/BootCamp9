@@ -2,3 +2,98 @@
     margin: 0;
     padding: 0;
 }
+
+
+
+.orange{
+    background-color: orange;
+}
+
+.red{
+    background-color: red;
+}
+
+.black{
+    background-color: black;
+}
+
+.blue{
+    background-color: blue;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+    border: none;
+
+}
+
+td{
+    width: 50px;
+    height: 50px;
+    border: 5px solid black;
+}
+
+/* body{
+    margin: 8px;
+}
+
+.box{
+    border: 1px solid red;
+    width: 30%;
+    height: 50px;
+    transition-duration: 1s;
+    color: red;
+}
+
+.box:hover{
+    transition: all;
+    /* background-color: red;
+    color: white; */
+    font-size: 24px;
+    width: 100%;
+    transition-duration: 1s;
+} */
+
+/* 
+.header{
+}
+
+.menu{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background-color: #2696E8;
+    margin: 0 auto;
+    border: 1px solid blue;
+    list-style: none;
+}
+
+.menu-item{
+    padding: 10px;
+    /* text-align: center; */
+    border: 1px solid blue;
+}
+
+.menu-item:hover{
+    background-color: #fff;
+    color: #000;
+} */
+
+/* .menu{
+    width: 70%;
+    border: 1px solid blue;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu-item{
+    width: 200px;
+    height: 200px;
+    border: 1px solid blue;
+    margin-bottom: 30px;
+} */
