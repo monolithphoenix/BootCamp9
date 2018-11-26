@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contact-us{
+    margin: auto;
+    background-color: #161f32;
+    color: #fff;
+}
+
+.contact-us-block{
+    width: 1150px;
+    margin: auto;
+}
+
+.contact-us-block h2{
+    padding-top: 67px;
+}
+
+.contact-us-block h3{
+    padding-top: 24px;
+}
+
+.contact-us-block h3::after{
+    content: "";
+    background-image: url("../img/Composed-layer.png");
+    padding-top: 24px;
+}
+
+.contact-us-block p{
+    padding-top: 25px;
+}
