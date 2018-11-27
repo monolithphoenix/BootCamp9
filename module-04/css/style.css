@@ -41,7 +41,8 @@ header, main, footer {
 }
 
 /* Заголовок над карточкоми товаров */
-.products-title {
+.products-title,
+.news-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     font-size: 30pt;
@@ -50,7 +51,8 @@ header, main, footer {
     color: #515151;
 }
 
-.products-title::after {
+.products-title::after,
+.news-title::after {
     content: "";
     display: block;
     margin: auto;
@@ -66,13 +68,24 @@ header, main, footer {
     width: 1110px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 62px;
 }
 
 /* Свойства карточки товара */
 .prod-item {
     width: 255px;
-    height: 325px;
-    border: 1px solid red;
+    margin-top: 30px;
+}
+
+.prod-link{
+    text-decoration: none;
+}
+
+.prod-img {
+    width: 255px;
+    height: 282px;
+    display: block;
 }
 
 .prod-paragraf {
@@ -84,7 +97,6 @@ header, main, footer {
     width:  255px;
     height: 40px;
     display: flex;
-    align-items: center;
     background-color: #323232;
 }
 
@@ -93,20 +105,37 @@ header, main, footer {
 }
 
 .name, .price {
-    /* padding: 10px;
-    font-size: 24px; */
     color: #ffffff;
-    /* font-weight: 700; */
+    padding: 12px;
 }
 
 .name {
     width: 201px;
-    height: 40px;
+    line-height: 16px;
     }
 
 .price {
-    width: 54px;
-    height: 40px;
-    text-align: center;
+    width: 30px;
+    line-height: 16px;
     background-color: rgba(255, 255, 255, .44);
+}
+
+/* Section .news stylesheets */
+.news{
+    padding-top: 105px;
+}
+
+.news-list {
+    list-style: none;
+    width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 75px;
+}
+
+.news-item {
+    width: 350px;
+    border: 1px solid red;
+    margin-top: 30px;
 }
