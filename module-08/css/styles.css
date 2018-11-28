@@ -1,4 +1,136 @@
+@media(min-device-pixel-ratio:2){
+    .head{
+        padding-top: 21px;
+        background-image: url(../img/header-bg@2X.png);
+    }     
+}
+
+/* montserrat-700 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v12-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+         url('../fonts/montserrat-v12-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/montserrat-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v12-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/montserrat-v12-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+/* roboto-300 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/roboto-v18-latin-300.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Light'), local('Roboto-Light'),
+         url('../fonts/roboto-v18-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/roboto-v18-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/roboto-v18-latin-300.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/roboto-v18-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
 *{
     margin: 0;
     padding: 0;
+}
+
+
+/* header stylesheet */
+.head{
+    padding: 21px 16px 139px;
+    background-image: url(../img/header-bg@1X.png);
+    background-color:rgba(0, 0, 0, .5);
+    background-position: center 0;
+    color: #ffffff;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-logo{
+    order: 1;
+}
+
+.nav-logo-text{
+    text-transform: uppercase;
+    font-style: 20px;
+}
+
+.nav-menu{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu-item{
+    padding: 8px 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-menu-item:hover{
+    padding: 6px 12px;
+    border: 2px solid #fff;
+    border-radius: 45px;
+}
+
+.find{
+    text-align: center;
+}
+
+.find-h{
+    font-family: 'Montserrat';
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.find-p{
+    font-family: 'Roboto';
+    font-size: 18px;
+    padding: 19px 0;
+    width: 220px;
+}
+
+.find-button{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: #ffffff;
+    width: 280px;
+    height: 40px;
+    background-color: #ff4e50;
+    border: 0;
+    border-radius: 20px;
+}
+
+
+
+/* section .meet stylesheet */
+.meet-list{
+    margin: 15px;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.meet-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 217px;
+    padding: 14px;
+}
+
+.meet-item-name{
+    padding-top: 20px;
+}
+
+.meet-item-comment{
+    padding-top: 16px;
+    text-align: center;
 }
