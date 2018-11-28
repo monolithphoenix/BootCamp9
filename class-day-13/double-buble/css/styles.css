@@ -2,3 +2,71 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+/* Section .insta */
+.insta{
+    position: relative;
+}
+
+.insta-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.insta-list> li{
+    display: contents;
+}
+
+.insta-block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 370px;
+    height: 180px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: wrap column;
+    background: linear-gradient(to left, #1ba2d8, #3359ac)
+}
+
+.insta-block-p{
+    font-family: 'Roboto';
+    font-size: 48px;
+    color: #ffffff;
+}
+
+/* Footer section */
+.footer{
+    width: 1165px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+.footer-logo{
+    width: 440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-social{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    list-style: none;
+}
