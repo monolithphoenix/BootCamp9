@@ -1,0 +1,54 @@
+/* ---MEDI@ for up768px SCREENS */
+@media(min-width:1440px){
+
+    .header{
+    padding: 2.375rem 250px 14.625rem;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* flex-wrap: wrap; */
+    }
+
+    .nav-logo{
+        order: 0;
+        margin: 0;
+        width: initial;
+        /* text-align: center; */
+    
+    }
+
+    .find-h {
+        font-size: 52px;
+        margin: 16% 20% 0;
+    }
+    
+    .find-p{
+        font-size: 24px;
+        margin: 2.26% auto;
+    }
+
+    .find-button{
+        padding: 0.725rem 1.2385rem;    
+    }
+    
+
+    .main{
+        padding: 4.375rem 15.625rem 4.375rem;
+    }
+    
+    .meet-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 4.0365% auto;
+        list-style: none;
+    }
+    
+    .meet-button{
+        padding: 0.6rem 1.627rem;    
+    }
+        
+}
