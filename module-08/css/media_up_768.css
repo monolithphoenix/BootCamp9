@@ -2,7 +2,7 @@
 @media(min-width:768px) and (max-width:1439px){
 
     .header{
-    padding: 2.2rem 3.125rem 14.625rem;
+        padding: 2.2rem 3.125rem 14.625rem;
     }
 
     .nav {
@@ -14,7 +14,6 @@
         order: 0;
         margin: 0;
         width: initial;
-    
     }
 
     .find-h {
@@ -37,11 +36,7 @@
     }
     
     .meet-list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         margin: 4.0365% auto;
-        list-style: none;
     }
     
     .meet-button{
