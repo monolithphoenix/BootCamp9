@@ -40,7 +40,14 @@
     background-color:rgba(0, 0, 0, 1);
     background-position: center 0;
 }
-@media(min-device-pixel-ratio:2){
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx)
+{
     .header{
         background-image: url(../img/header-bg@2X.png);
     }     
