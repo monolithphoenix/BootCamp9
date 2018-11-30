@@ -1,5 +1,5 @@
 /* ---MEDI@ for up768px SCREENS */
-@media(min-width:768px){
+@media(min-width:768px) and (max-width:1439px){
 
     .header{
     padding: 2.2rem 3.125rem 14.625rem;

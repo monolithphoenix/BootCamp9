@@ -31,7 +31,7 @@
     }
 
     .find-button{
-        padding: 0.725rem 1.2385rem;    
+        padding: 0.688rem 1.207rem;    
     }
     
 
@@ -39,16 +39,12 @@
         padding: 4.375rem 15.625rem 4.375rem;
     }
     
-    .meet-list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 4.0365% auto;
-        list-style: none;
+    .meet-item{
+        margin: 3.2% .95%;
     }
-    
+
     .meet-button{
-        padding: 0.6rem 1.627rem;    
+        padding: 0.5625rem 1.595rem;    
     }
         
 }
