@@ -1,4 +1,4 @@
-/* ---MEDI@ for up768px SCREENS */
+/* ---MEDI@ for up1440px SCREENS */
 @media(min-width:1440px){
 
     .header{
@@ -6,18 +6,14 @@
     }
 
     .nav {
-        display: flex;
         justify-content: space-between;
         align-items: center;
-        /* flex-wrap: wrap; */
     }
 
     .nav-logo{
         order: 0;
         margin: 0;
         width: initial;
-        /* text-align: center; */
-    
     }
 
     .find-h {

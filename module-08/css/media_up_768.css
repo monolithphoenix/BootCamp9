@@ -1,4 +1,4 @@
-/* ---MEDI@ for up768px SCREENS */
+/* ---MEDI@ for up768px_to1439px SCREENS */
 @media(min-width:768px) and (max-width:1439px){
 
     .header{
@@ -6,17 +6,14 @@
     }
 
     .nav {
-        display: flex;
         justify-content: space-between;
         align-items: center;
-        /* flex-wrap: wrap; */
     }
 
     .nav-logo{
         order: 0;
         margin: 0;
         width: initial;
-        /* text-align: center; */
     
     }
 
