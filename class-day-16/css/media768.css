@@ -1,0 +1,25 @@
+@media (min-width: 768px){
+    .logo, .menu{
+        margin: 0;
+    }
+
+    .block1{
+        margin: 200px 0 100px;
+        text-align: initial;
+    }
+
+    .head-p{
+        margin: 60px 0;
+    }
+
+    .smart{
+        position: relative;
+    }
+    
+    .smartphone{
+        visibility: visible;
+        position: absolute;
+        top: -187px;
+    }
+
+}

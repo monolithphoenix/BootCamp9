@@ -1,0 +1,58 @@
+*{
+    padding: 0;margin: 0;
+}
+.header{
+    background-color: #223047;
+    text-align: center;
+}
+
+.logo{
+    margin-top: 14px;
+}
+.menu{
+    list-style: none;
+    color: #fff;
+    display: flex;
+    margin-top: 16px;
+}
+
+.but{
+    padding: .5375rem 1.9375rem;
+    background-color: #00fff0;
+    color: #233148;
+    border: .0625rem solid #00fff0;
+    border-radius: .25rem;
+    font-size: 14px;
+    margin: .5rem;
+}
+
+.but:hover{
+    background-color: transparent;
+    border: .0625rem solid #fff;
+    color: #fff;
+}
+
+.getapp{
+    margin: 14px 30px 14px 0;
+}
+
+.head-h2{
+    font-size: 40px;
+    color: #fff;
+}
+
+.head-p{
+    font-size: 14px;
+    color: #fff;
+    margin: 2rem 0;
+}
+
+.block1{
+    margin: 1rem 0;
+}
+
+.smart{
+    visibility: hidden;
+}
+
+
