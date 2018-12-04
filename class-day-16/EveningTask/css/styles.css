@@ -68,11 +68,15 @@
     padding: 32px 15px;
     color: #fff;
     background-color: #2096da;
+    cursor: pointer;
 }
 
 .head-nesovsemsocial{
     color: #5b595a;
     display: flex;
+    height: 25px;
+    align-items: center;
+    margin-top: 2px;
 }
 
 .soc-list, .head-menu{
@@ -107,7 +111,7 @@
     color: #fff;
 }
 
-.menu-item:hover a{
+.menu-item:hover {
     background-color: #2096da;
 }
 
@@ -136,6 +140,9 @@
 .main-list-card img{
     display: block;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .item3{
