@@ -53,7 +53,7 @@
 
 .menu-link:hover{
     color: #f38181;
-    transition-property: 
+    transition-property: all;
     transition-duration: 2s;
 }
 
