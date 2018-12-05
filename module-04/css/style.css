@@ -5,11 +5,12 @@
     padding: 0;
 }
 
-header, main, footer {
+header, main {
     width: 1110px;
     margin: 0 auto;
 }
 
+/* --- HEADER --- */
 .header {
     padding-top: 40px;
     padding-bottom: 105px;
@@ -39,7 +40,8 @@ header, main, footer {
     color: #1abc9c;
 }
 
-/* Заголовок над карточкоми товаров */
+/* --- MAIN --- */
+/* --- Section .products stylesheets --- */
 .products-title,
 .news-title {
     font-family: 'Roboto', sans-serif;
@@ -60,7 +62,7 @@ header, main, footer {
     margin: 30px auto;
 }
 
-/* Секция карточек товаров */
+/* --- Секция карточек товаров --- */
 .product-list {
     list-style: none;
     width: 1110px;
@@ -70,7 +72,7 @@ header, main, footer {
     margin-top: 62px;
 }
 
-/* Свойства карточки товара */
+/* --- Свойства карточки товара --- */
 .prod-item {
     width: 255px;
     margin-top: 30px;
@@ -118,7 +120,7 @@ header, main, footer {
     background-color: rgba(255, 255, 255, .44);
 }
 
-/* Section .news stylesheets */
+/* --- Section .news stylesheets --- */
 .news{
     padding: 100px 0 80px;
 }
@@ -142,7 +144,6 @@ header, main, footer {
 
 .news__item {
     width: 351px;
-    /* border: 1px solid red; */
     margin-top: 25px;
 }
 
