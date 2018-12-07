@@ -2,3 +2,48 @@
     margin: 0;
     padding: 0;
 }
+
+@mixin font-style(
+    $font-family: "Open Sans", 
+    $text-transform: uppercase, 
+    $font-weight: 400,
+    $font-size: 14px){
+        font-family: $font-family, sans-serif; 
+        text-transform: $text-transform; 
+        font-weight: $font-weight;
+        font-size: $font-size+px;
+    }
+
+body{
+    background: linear-gradient(135deg, #ac233d 0%,#0b84e4 50%,#853b66 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap{
+
+}
+
+.form{
+    width: 486px;
+    background: #f7f6f9;
+    padding: 43px 23px;
+
+
+    &-lable{
+        @include font-style;
+        margin-bottom: 26px;
+    }
+
+    &-email{
+        margin-bottom: 40px;
+    }
+
+    &-submit{
+
+    }
+
+    &-link{
+        text-decoration: none;
+    }
+}
