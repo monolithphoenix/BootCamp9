@@ -137,3 +137,12 @@ $maincolor: #f12078;
       }
    }
 }
+
+.move{
+   // transition-duration: 2s;
+   position: relative;
+   // bottom: -500px;
+   // z-index: 1;
+   transform: skew(90deg, 90deg);
+   // transition-delay: 2s;
+}
