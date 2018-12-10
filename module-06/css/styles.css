@@ -70,6 +70,7 @@
 .team--pre_head{
     font-family: 'Kaushan Script', cursive;
     font-size: 24px;
+    font-weight: 500;
     text-align: center;
     margin-bottom: 15px;
 }
@@ -140,21 +141,45 @@
 
 .services_list--paragraph{
     width: 270px;
-    margin: 15px 0;
-    font-family: 'Roboto';
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 1.6;
     color: #aaaaaa;
 }
 
 .team--paragpaph{
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     color: #aaaaaa;
     font-size: 15px;
     width: 940px;
-    margin: auto;
+    margin: 0 auto 90px;
     }
+
+.team_list{
+}
+
+.team_list--member{
+    width: 383px;
+    text-align: center;
+}
+
+.team_list--picture{
+    margin-bottom: 30px;
+}
+
+.team_list--name{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 14;
+    margin-bottom: 15px;
+}
+
+.team_list--position{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+}
 
 /* --- FOOTER --- */
 .footer{
@@ -186,7 +211,7 @@
     box-sizing: border-box;
     color: #d9d9d9;
     padding-left: 13px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     color: #000000;
 
