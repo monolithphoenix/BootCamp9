@@ -1,0 +1,118 @@
+/*
+   Import partials below
+*/
+@import './normalize';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto');
+*{
+   margin: 0;
+   padding: 0;
+}
+
+@mixin font-style-main(
+   $font-size: 14,
+   $color: #212121,
+   $font-family: 'Open Sans', 
+   $text-transform: uppercase, 
+   $font-weight: 400,
+   $line-height: 1){
+      font-size: $font-size+px;
+      color: $color;      
+      font-family: $font-family, sans-serif; 
+      text-transform: $text-transform; 
+      font-weight: $font-weight;
+      line-height: $line-height;
+   }
+
+@mixin font-style-sub(
+   $font-size: 16,
+   $color: #0091ea,
+   $font-family: 'Roboto', 
+   $text-transform: uppercase, 
+   $font-weight: 400,
+   $line-height: 1){
+      font-size: $font-size+px;
+      color: $color;      
+      font-family: $font-family, sans-serif; 
+      text-transform: $text-transform; 
+      font-weight: $font-weight;
+      line-height: $line-height;
+   }
+
+$main-color: #0091ea; 
+
+body{
+   background: linear-gradient(135deg, #ac233d 0%,#0b84e4 50%,#853b66 100%);
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;
+}
+
+.wrap{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+   padding-top: 75px;
+}
+
+.form{
+   display: flex;
+   flex-direction: column;
+   width: 440px;
+   background: #f7f6f9;
+   padding: 43px 23px 50px;
+   margin: 15px;
+
+
+   &-title{
+      @include font-style-main(40);
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 17px;
+   }
+
+   &-lable{
+       @include font-style-sub(14);
+       margin: 30px 0 25px;
+   }
+
+   &-email{
+      @include font-style-sub(14, #000);
+      padding: 10px 10px;
+      // outline: none;
+
+
+      &::placeholder{
+         @include font-style-main(14, #c1c1c1);
+      }
+
+      // &:focus{
+      //    outline: 2px solid blue;
+      // }
+
+
+      // // &:valid{
+      // //    outline: 2px solid green;
+      // }
+
+      &:invalid{
+         outline: 2px solid red;
+      }
+
+   }
+
+   &-submit{
+      @include font-style-main(14, #fff);
+      background-color: $main-color;
+      border: none;
+      padding: 20px 0;
+      margin: 40px 0;
+   }
+
+   &-link{
+      @include font-style-sub;
+      text-decoration: none;
+      text-transform: none;
+
+   }
+}
