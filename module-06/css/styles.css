@@ -137,8 +137,18 @@
     border-right: none;
     box-sizing: border-box;
     color: #d9d9d9;
+    padding-left: 13px;
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #000000;
+
 }
-.footer__button{
+
+.footer__input-email::placeholder{
+    color: #d3d3d3;
+}
+
+.footer__input-subscribe{
     width: 150px;
     height: 40px;
     border: none;
