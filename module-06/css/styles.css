@@ -4,7 +4,7 @@
 }
 
 
-/* Global stylesheets */
+/* ---------- Global stylesheets ---------- */
 .header,
 .main,
 .footer{
@@ -23,7 +23,7 @@
     list-style: none
 }
 
-/* --- HEADER --- */
+/* ---------- HEADER ---------- */
 .header{
     align-items: flex-end; 
     padding-top: 28px;
@@ -46,7 +46,6 @@
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 14;
     font-size: 14px;
     color: #95e1d3;
 }
@@ -60,7 +59,7 @@
     transition-timing-function: linear;
 }
 
-/* --- MAIN --- */
+/* ---------- MAIN ---------- */
 .services,
 .team{
     margin: 85px auto;
@@ -157,21 +156,78 @@
     margin: 0 auto 90px;
     }
 
-.team_list{
-}
-
 .team_list--member{
     width: 383px;
     text-align: center;
 }
 
 .team_list--picture{
+    position: relative;
+    width: 383px;
+    height: 472px;
     margin-bottom: 30px;
+    background-color: #95e1d3;
+}
+.team_list--picture:hover>.team_list--picture_card{
+    transform: translate(-9px, -9px);
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
 }
 
+.team_list--picture:hover>.social_buttons{
+    transform: translate( -52.2%, -52%);
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
+
+
+/* ---------- SOCIAL BUTTONS ---------- */
+.social_buttons{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    opacity: 0;
+    width: 227px;
+    height: 57px;
+    background-image: linear-gradient(to top, rgba(252,227,138,.9) 0%, rgba(243,129,129, .9) 100%);
+    padding: 208px 78px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social_buttons--icon{
+    width: 56px;
+    height: 56px;
+    background-color: #fce38a;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+.social_buttons--icon:hover{
+    background-color: #95e1d3;
+}
+.facebook{
+    background-image: url(../img/facebook@1X.png)
+}
+.twitter{
+    background-image: url(../img/twitter@1X.png)
+}
+.pinterest{
+    background-image: url(../img/pinterest@1X.png)
+}
+.instagram{
+    background-image: url(../img/instagram@1X.png)
+}
+
+
+/* ---------- TEAM MEMBER CARDS ---------- */
 .team_list--name{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 14;
     margin-bottom: 15px;
 }
 
@@ -181,7 +237,8 @@
     font-style: italic;
 }
 
-/* --- FOOTER --- */
+
+/* ---------- FOOTER ---------- */
 .footer{
     align-items: center;
     padding: 10px 0;
@@ -190,7 +247,6 @@
 
 .footer--copyright{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 14;
 }
 
 .footer--tmplt_author{
@@ -214,7 +270,6 @@
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     color: #000000;
-
 }
 
 .footer--input_email::placeholder{
