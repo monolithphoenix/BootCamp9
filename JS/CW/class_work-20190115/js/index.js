@@ -70,19 +70,76 @@
 
     // console.table(result);
 
-// Написать програму которая будет отвечать за список покупок
+// Написать программу которая будет отвечать за список покупок
 // 1) В диалоговое окно вводим количество покупок которое хотим сделать;
 // 2) Сколько покупок столько раз появится окно где юзер пишет фразу "Название товара:цена" Например ("Булочка:5")
 // 3) После ввода всех товаров алертом вывести суму покупок;
 
-    const productsQuantity = Number(prompt("Давайте посчитаем сумму чека. Вверите количество товаров, которое Вы купили"));
-    let sum = 0;
+    // const productsQuantity = Number(prompt("Давайте посчитаем сумму чека. Вверите количество товаров, которое Вы купили"));
+    // let sum = 0;
 
-    for(i = 0; i < productsQuantity; i++) {
-        const price = Number(prompt("Название товара:цена").split(':').pop());
-        console.log(price);
+    // for(i = 0; i < productsQuantity; i++) {
+    //     const price = Number(prompt("Название товара:цена").split(':').pop());
+    //     console.log(price);
         
-        sum = sum + price;
-    }
-    console.log(sum);
-    alert("Сумма покупки: " + sum.toFixed(2))
+    //     sum = sum + price;
+    // }
+    // console.log(sum);
+    // alert("Сумма покупки: " + sum.toFixed(2))
+
+// 1) Данно оригинальний масив let arr = [5,10,15,20,25,30,35,40];
+// 2) Данно масив з остатком let result = [10,20,35];
+// 3) Получить масив удаленых чисел; // [5,15,25,30,40];
+
+    // let arr = [5,10,15,20,25,30,35,40];
+    // let result = [10,20,35];
+
+    // let del = [];
+    // for (let el of arr) {
+    //     if (!result.includes(el)) {
+    //         del.push(el);
+    //     }
+    // }
+
+    // console.log(del);
+    
+// Написать программу которая находит разницу значений двух масивов
+// 1) [1, 2, 3], [100, 2, 1, 10] // [3, 10, 100]
+
+    // let arrA = [1, 2, 3];
+    // let arrB = [100, 2, 1, 10];
+
+    // let arrC = [];
+    // for (let el of arrA) {
+    //     if (!arrB.includes(el)) {
+    //         arrC.push(el);
+    //     }
+    // }
+    // for (let el of arrB) {
+    //     if (!arrA.includes(el)) {
+    //         arrC.push(el);
+    //     }
+    // }
+    // console.log(arrC);
+
+// Есть массив [1,2,5,10,12,5,3,2,8,3]
+
+    // let arr = [1,2,5,10,12,5,3,2,8,3];
+
+    // let resultArr = [];
+    // for (let el of arr) {
+    //     let count = 0;
+    //     for (let otherEl of arr) {
+    //         if (el === otherEl) {
+    //             count++;
+    //         }
+    //     }
+    //     if (count === 1) {
+    //         resultArr.push(el);
+    //     }
+    // }
+    // console.log(resultArr);   
+
+//  Написать код который удалит из масива  null, 0, "", false, undefined, NaN
+// 1) let start =  [NaN, 0, 15, false, -22, '',undefined, 47, null];
+// 2) Должны получить на виходе let result = [15, -22, 47];
