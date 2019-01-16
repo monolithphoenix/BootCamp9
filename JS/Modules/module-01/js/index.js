@@ -88,36 +88,57 @@
 const SHARM = 15;
 const HURGADA = 25;
 const TABA = 6;
-const USER_PLACE = prompt('Введите число необходимых мест:');
+const USER_PLACE = Number(prompt('Введите число необходимых мест:'));
+// Набор фраз:
+const alertNull = "Нам очень жаль, приходите еще!";
+const alertNoPlaces = alertNull;
+const alertError = "Ошибка ввода";
+const alertNiceTrip = "Приятного путешествия в ";
+const alertHavePlaces = " у нас есть свободные места на курорт ";
+const alertClickOk = "! \r\nНажмите ОК, если хотите поехать туда.";
+const alertClickCancel = "\r\nНажмите Отмена, если хотите посмотреть другие предложения.";
+const alertLastChanse = "\r\nЭто последнее предложение...";
+
+console.log(USER_PLACE);
 
 if ( USER_PLACE === null ) {
-  alert('Нам очень жаль, приходите еще!');
-} else if ( Number(USER_PLACE) === Math.round(USER_PLACE) && USER_PLACE > 0 ) {
-  if (Number(USER_PLACE)<=TABA) {
-    if (confirm('Поздравляем, у нас есть свободные места в группе, которая едет на Таба, нажмите "ОК", если хотите поехать туда или нажмите "Отмена", если хотите посмотреть другие предложения')) {
-      alert('Приятного путешествия в группе Таба');
-    } else {
-      if (confirm('Поздравляем, у нас есть свободные места в группе, которая едет на Шарм, нажмите "ОК", если хотите поехать туда или нажмите "Отмена", если хотите посмотреть другие предложения')) {
-        alert('Приятного путешествия в группе Шарм');
-      } else {
-      alert('Нам очень жаль, приходите еще!');
+  alert(alertNull);
+} 
+else if ( USER_PLACE === Math.round(USER_PLACE) && USER_PLACE > 0 ) {
+  if ( USER_PLACE <= TABA ) {
+    if (confirm("Поздравляем," + alertHavePlaces + "Таба" + alertClickOk + alertClickCancel)) {
+      alert(alertNiceTrip + "Таба!");
+    } 
+    else {
+      if (confirm("Также" + alertHavePlaces + "Шарм" + alertClickOk + alertClickCancel)) {
+        alert(alertNiceTrip + "Шарм!");
+      } 
+      else {
+        if (confirm("Также" + alertHavePlaces + "Хургада" + alertClickOk + alertLastChanse)) {
+          alert(alertNiceTrip + "Хургада!");
+        } 
+        else {
+          alert(alertNoPlaces);
+        }
+      }
     }
-  }
-  } else if (Number(USER_PLASE)<=SHARM) {
+  } 
+  else if ( USER_PLACE <= SHARM ) {
     if (confirm('Поздравляем, у нас есть свободные места в группе на Шарм, едем туда?   PS ещё есть места там то)')) {
       alert('Приятного путешествия в группе <имя группы>');
-    } else {
-      alert('Нам очень жаль, приходите еще!');
+    } 
+    else {
+      alert(alertNoPlaces);
     }
-  } else if (Number(USER_PLASE)<=HURGADA) {
+  } else if ( USER_PLACE <= HURGADA ) {
     if (confirm('Поздравляем, у нас есть свободные места в группе на Хургада, едем туда? Это последнее предложение!')) {
-      alert('Приятного путешествия в группе <имя группы>');
+      alert(alertNiceTrip + "Хургада!");
     } else {
-      alert('Нам очень жаль, приходите еще!');
+      alert(alertNoPlaces);
     }
   } else {
     alert('Извините, столько мест нет ни в одной группе!')
   }
 } else {
-  alert('Ошибка ввода');
+  alert(alertError);
 }
