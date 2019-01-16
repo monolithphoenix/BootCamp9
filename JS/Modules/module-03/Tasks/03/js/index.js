@@ -11,12 +11,16 @@
 */
 
 function checkForSpam(str) {
-  str = str.toLowerCase();
-  if (str.indexOf('spam') === -1 && str.indexOf("sale") === -1) {
-    return false;
-  } else {
-    return true;
-  };
+  // V1
+    // str = str.toLowerCase();
+    // if (str.indexOf('spam') === -1 && str.indexOf("sale") === -1) {
+    //   return false;
+    // } else {
+    //   return true;
+    // };
+
+  // V2
+    return str.toLowerCase().includes("spam") || str.toLowerCase().includes("sale");
 };
 
 // Вызовы функции для проверки
