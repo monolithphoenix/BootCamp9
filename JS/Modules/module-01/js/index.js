@@ -124,21 +124,30 @@ else if ( USER_PLACE === Math.round(USER_PLACE) && USER_PLACE > 0 ) {
     }
   } 
   else if ( USER_PLACE <= SHARM ) {
-    if (confirm('Поздравляем, у нас есть свободные места в группе на Шарм, едем туда?   PS ещё есть места там то)')) {
-      alert('Приятного путешествия в группе <имя группы>');
+    if (confirm("Поздравляем," + alertHavePlaces + "Шарм" + alertClickOk + alertClickCancel)) {
+      alert(alertNiceTrip + "Шарм!");
+    } 
+    else {
+      if (confirm("Также" + alertHavePlaces + "Хургада" + alertClickOk + alertLastChanse)) {
+        alert(alertNiceTrip + "Хургада!");
+      } 
+      else {
+        alert(alertNoPlaces);
+      }
+    }
+  } 
+  else if ( USER_PLACE <= HURGADA ) {
+    if (confirm("Поздравляем," + alertHavePlaces + "Хургада" + alertClickOk + alertLastChanse)) {
+      alert(alertNiceTrip + "Хургада!");
     } 
     else {
       alert(alertNoPlaces);
     }
-  } else if ( USER_PLACE <= HURGADA ) {
-    if (confirm('Поздравляем, у нас есть свободные места в группе на Хургада, едем туда? Это последнее предложение!')) {
-      alert(alertNiceTrip + "Хургада!");
-    } else {
-      alert(alertNoPlaces);
-    }
-  } else {
-    alert('Извините, столько мест нет ни в одной группе!')
+  } 
+  else {
+    alert("Cтолько мест нет ни в одной группе!")
   }
-} else {
+} 
+else {
   alert(alertError);
 }
