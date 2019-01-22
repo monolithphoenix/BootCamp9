@@ -22,6 +22,23 @@
 let userInput;
 const numbers = [];
 let total = 0;
+let num;
+do {
+  num = prompt("Введите число");
+  
+  if (num !== null) {
+    numbers.push(Number(num));
+  };
+ } while (num !== null);
+console.log(numbers);
+for ( let el of numbers) {
+  total = total + el;
+};
+
+console.log(total);
+console.log(numbers);
+console.log(numbers.length);
+
 
 
 /*
