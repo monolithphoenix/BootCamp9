@@ -19,26 +19,25 @@
       в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
 */
 
-let userInput;
 const numbers = [];
 let total = 0;
 let num;
+
 do {
   num = prompt("Введите число");
-  
-  if (num !== null) {
+  if (!Number(num) && num !== null) {
+    alert('Было введено не число, попробуйте еще раз');
+  } else
+   if (num !== null) {
     numbers.push(Number(num));
   };
  } while (num !== null);
-console.log(numbers);
 for ( let el of numbers) {
   total = total + el;
 };
-
-console.log(total);
-console.log(numbers);
-console.log(numbers.length);
-
+if (numbers.length !== 0) {
+  alert(`Общая сумма чисел равна ${total}`);
+};
 
 
 /*
@@ -58,15 +57,32 @@ console.log(numbers.length);
   Если был введен не существующий пароль, отнять от лимита попыток единицу, 
   вывести alert с текстом "Неверный пароль, у вас осталось n попыток", 
   где n это оставшийся лимит. 
-  
+
   После того как пользователь закрыл alert, запросить пароль снова. 
   Продолжать запрашивать пароль до тех пор, пока пользователь не введет 
   существующий пароль, не кончатся попытки или пока пользователь 
   не нажмет Cancel в prompt.
   Если закончились попытки, вывести alert с текстом "У вас закончились попытки, аккаунт заблокирован!"
-  
+
   Если пользователь нажмет Cancel, прекратить выполнение цикла.
 */
 
 const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attempts = 3;
+let enterResult;
+
+do {
+  enterResult = prompt('Enter your password');
+    if (enterResult === null) {
+      break;
+    } else if (passwords.includes(enterResult)) {
+      alert('Добро пожаловать!');
+      break;
+    };
+  --attempts;
+    if (!attempts) {
+      alert("У вас закончились попытки, аккаунт заблокирован!");
+    } else {
+      alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+    };
+} while (attempts)
