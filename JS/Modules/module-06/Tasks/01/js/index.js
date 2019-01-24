@@ -11,3 +11,19 @@
   
   Создать несколько экземпляров с разными значениями свойств, вывести их в консоль.
 */
+function Account (login, email, friendsCount) {
+  this.login = login;
+  this.email = email;
+  this.friendsCount = friendsCount;
+};
+Account.prototype.getAccountInfo = function() {
+    console.log(this.login, this.email, this.friendsCount);
+};
+
+let user1 = new Account ('Garold', 'garold@gmail.com', 6);
+let user2 = new Account ('Freddy', 'fm@yahoo.com', 683);
+let user3 = new Account ('Mark', 'maRkey@gmail.com', 7);
+
+user1.getAccountInfo();
+user2.getAccountInfo();
+user3.getAccountInfo();
