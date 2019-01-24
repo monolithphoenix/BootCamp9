@@ -37,7 +37,7 @@
 */
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 // Вывод исходного массива с логинами
-// console.log(logins);
+console.log(logins);
 
 
 const isLoginValid = function(login) {
@@ -73,4 +73,4 @@ addLogin(logins,'robotGoogles'); // 'Такой логин уже использ
 addLogin(logins,'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
 addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
 // Вывод обновлённого массива с логинами
-// console.log(logins);
+console.log(logins);
