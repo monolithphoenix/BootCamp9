@@ -162,18 +162,26 @@
     // 7) ключ creditCosts // загальні затрати по кредитах
     // 8) ключ charity // сума яку виділили на благодійність
     
-    function Account () {
-        this.name;
-        this.id;
-        this.balance;
+    function Account (name, id) {
+        this.name = name;
+        this.id = id;
+        this.balance = 0;
         this.credit = [];
         this.deposit = [];
-        this.depositIncome = [];
-        this.creditCosts = [];
-        this.charity = [];
-            this.countDepositsIncome = function () {};
-            this.openDeposit = function () {};
-            this.countCreditCost = function () {};
+        this.depositIncome = 0;
+        this.creditCosts = 0;
+        this.charity = 0;
+            this.countDepositsIncome = function (sum) {
+                // метод що приймає суму депозита і та збільшує поле depositIncome в задежності від типу і ставки і періоду депозиту.
+                return balance = balance + 15;
+            };
+            this.openDeposit = function () {
+                //метод що додає депозит в список deposits і запускає метод countDepositsIncome
+                return this.balance = this.balance + 15;
+            };
+            this.countCreditCost = function () {
+                //метод що приймає суму кредиту і його тип та збільшує поле creditCosts
+            };
             this.openCredit = function () {};
             this.showIncome = function () {};
             this.showCost = function () {};
@@ -197,35 +205,51 @@
     // 10) closeCredit метод що закриває кредит в банку і видаляє його з поля credits та забирає суму з creditCosts
     // 11) closeDeposit метод що закриває депозит в банку і видаляє його з поля deposits та забирає суму з depositIncome
     
-    Account.prototype.countDepositsIncome () {};
-    Account.prototype.openDeposit () {};
-    Account.prototype.countCreditCost () {};
-    Account.prototype.openCredit () {};
-    Account.prototype.showIncome () {};
-    Account.prototype.showCost () {};
-    Account.prototype.showProfit () {};
-    Account.prototype.getCash () {};
-    Account.prototype.addition () {};
-    Account.prototype.closeCredit () {};
-    Account.prototype.closeDeposit () {};
+    // simple deposit formula
+        // = amount * (percent / 12) * periodInMonth
+    // compound deposit formula
+        // = amount*(1 + percent / year)(year*periodInYears)
+
+    // Блок подключения объектов функции Account 
+        // Account.prototype.countDepositsIncome () {};
+        // Account.prototype.openDeposit () {};
+        // Account.prototype.countCreditCost () {};
+        // Account.prototype.openCredit () {};
+        // Account.prototype.showIncome () {};
+        // Account.prototype.showCost () {};
+        // Account.prototype.showProfit () {};
+        // Account.prototype.getCash () {};
+        // Account.prototype.addition () {};
+        // Account.prototype.closeCredit () {};
+        // Account.prototype.closeDeposit () {};
 
 
     // // Зразок обєкта депозита
-    // const deposit = {
-    //     amount: 5000,
-    //     type: '', // типи депозиту 'simple', 'compound'
-    //     percent: '10%',
-    //     period: 1 // період вказуємо в місяцях
-    // }
+    const deposit = {
+        amount: 5000,
+        type: '', // типи депозиту 'simple', 'compound'
+        percent: '10%',
+        period: 1 // період вказуємо в місяцях
+    }
     
     // // зразок обєкта кредиту
-    // const credit = {
-    //     amount: 500000,
-    //     type: '', // типи кредиту 'annuity', 'simple'
-    //     percent: '5%',
-    //     period: 15 // період вказуємо в роках
-    // }
+    const credit = {
+        amount: 500000,
+        type: '', // типи кредиту 'annuity', 'simple'
+        percent: '5%',
+        period: 15 // період вказуємо в роках
+    }
     
+   
+    let firstUserDep = new Account('Albert', 1487);
+    firstUserDep.countDepositsIncome;
+    console.log(Account);
+    console.log(firstUserDep);
+    console.log(firstUserDep.balance);
+
+    
+    
+         
     
     // simple deposit formula https://www.rapidtables.com/calc/finance/simple-interest-calculation.html 
     
@@ -238,4 +262,3 @@
     // simple credit formula
     // Дивитися Приклад 3.
     // https://uk.wikibooks.org/wiki/%D0%A4%D1%96%D0%BD%D0%B0%D0%BD%D1%81%D0%B8/%D0%9E%D0%B1%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F_%D0%B2%D1%96%D0%B4%D1%81%D0%BE%D1%82%D0%BA%D1%96%D0%B2_%D0%B7%D0%B0_%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BE%D0%BC_%D0%B0%D0%B1%D0%BE_%D0%B4%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D0%BC
-    
