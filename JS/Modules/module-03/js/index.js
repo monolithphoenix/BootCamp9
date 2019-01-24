@@ -35,23 +35,42 @@
       - addLogin добавляет или не добавляет логин в массив. При этом для проверок условия добавления 
         используются результаты вызовов других функций - isLoginUnique и isLoginValid.
 */
-
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// Вывод исходного массива с логинами
+console.log(logins);
+
 
 const isLoginValid = function(login) {
-  // код
+  if (login.length >= 4 && login.length <= 16) {
+    return true;
+  } else {
+    return false;
+  };
 };
 
 const isLoginUnique = function(allLogins, login) {
-  // код
+  if (allLogins.includes(login)) {
+    return false;
+  } else {
+    return true;
+  };
 };
 
 const addLogin = function(allLogins, login) {
-  // код
+  if (!isLoginValid(login)) {
+    console.log('Ошибка! Логин должен быть от 4 до 16 символов');
+  } else if (isLoginUnique(allLogins, login)) {
+    logins.push(login);
+    console.log('Логин успешно добавлен!');
+  } else {
+    console.log('Такой логин уже используется!');
+  };
 };
 
 // Вызовы функции для проверки
-addLogin('Ajax'); // 'Логин успешно добавлен!'
-addLogin('robotGoogles'); // 'Такой логин уже используется!'
-addLogin('Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-addLogin('jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
+addLogin(logins,'robotGoogles'); // 'Такой логин уже используется!'
+addLogin(logins,'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// Вывод обновлённого массива с логинами
+console.log(logins);
