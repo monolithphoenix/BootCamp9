@@ -139,15 +139,39 @@ function Ship(name, life, armor, color, x, y, amunition) {
   console.log(player2.planes);
   player2.launchPlane();
   console.log(player2.planes);
+  
 
 
 
 // CW. Part 2. Tasks
 
 // #1 
-    // 1)Створити клас Worker що буде мати властивості name, surname, rate, days
+    // 1) Створити клас Worker що буде мати властивості name, surname, rate, days
     // 2) Додати метод getSalary(),
     // 3) Створити 2 робітника і знайти їх зарплати
+
+    function Worker (name, surname, rate, days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    };
+
+    class WorkerCalc extends Worker {
+        constructor (name, surname, rate, days) {
+            super (name, surname, rate, days);
+        };
+        getSalary() {
+            return this.rate * this.days;
+        };
+    };
+
+    let wrkr1 = new WorkerCalc ('Stiven', 'Hihg', 10, 20);
+    let wrkr2 = new WorkerCalc ('Fairy', 'Mairy', 15, 15);
+
+    console.log(wrkr1.getSalary());
+    console.log(wrkr2.getSalary());
+    
 // #2 
     // 1) Створити конструктор User шо буде мати поля name, surname
     // 2) Додати метод getFullName() що виводить на екран імя і прізвище
@@ -174,4 +198,3 @@ function Ship(name, life, armor, color, x, y, amunition) {
     // Додати в прототип PapperBook метод burn(arr) який приймає аргументом масив books з частини №1 при виклику виводить в консоль напис 'Book {title} has been burned' і видаляє з масива order ту книгу для якої викликаємо цей метод.
     // Створити 3 книги конструктором PapperBook і викликати для них метод buy(arr) щоб додати їх до масиву order.
     // Викликати для першої і другої книги методи burn(arr), щоб видатити їх з масива books
-
