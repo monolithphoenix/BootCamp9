@@ -65,5 +65,6 @@ auto.turnOn();
 console.log(auto.speed);
 auto.accelerate(100);
 console.log(auto.speed);
+auto.decelerate(80);
 console.log(auto);
 
