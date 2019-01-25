@@ -48,19 +48,20 @@ function Cashier(name, productDatabase) {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
-  this.getCustomerMoney(value) {
+  this.getCustomerMoney = function(value) {
     return this.customerMoney = this.customerMoney + value; 
   };
-  this.countTotalPrice(order) {
+  this.countTotalPrice = function(order) {
+    let sum = 0;
     for(el of order) {
-      el * this.productDatabase.el;
+    return sum = sum + (el * this.productDatabase.el);
     };
   };
-  this.countChange(totalPrice) {
-    if(this.customerMoney > totalPrice) {
-      return 
-    }
-  };
+  // this.countChange(totalPrice) {
+  //   if(this.customerMoney > totalPrice) {
+  //     return 
+  //   }
+  // };
 };
 
 /* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
@@ -73,7 +74,7 @@ const order = {
 
 /* Пример использования */
 const mango = new Cashier('Mango', products);
-
+// console.log(mango.customerMoney + 300);
 // Проверяем исходные значения полей
 console.log(mango.name); // Mango
 console.log(mango.productDatabase); // ссылка на базу данных продуктов (объект products)
@@ -84,7 +85,7 @@ console.log(mango.customerMoney); // 0
 const totalPrice = mango.countTotalPrice(order);
 
 // Проверям что посчитали
-console.log(totalPrice); // 110
+// console.log(totalPrice); // 110
 
 // Вызываем getCustomerMoney для запроса денег покупателя
 mango.getCustomerMoney(300);
