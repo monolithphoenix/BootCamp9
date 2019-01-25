@@ -12,6 +12,7 @@ const products = {
   chicken: 50,
   cheese: 40,
 };
+console.log(products.milk);
 
 /* 
   Необходимо создать функцию-конструктор Cashier.
@@ -44,7 +45,23 @@ const products = {
 
 function Cashier(name, productDatabase) {
   // 🔔 не забывайте о this при обращении к свойствам и методам будущего объекта
-}
+  this.name = name;
+  this.productDatabase = productDatabase;
+  this.customerMoney = 0;
+  this.getCustomerMoney(value) {
+    return this.customerMoney = this.customerMoney + value; 
+  };
+  this.countTotalPrice(order) {
+    for(el of order) {
+      el * this.productDatabase.el;
+    };
+  };
+  this.countChange(totalPrice) {
+    if(this.customerMoney > totalPrice) {
+      return 
+    }
+  };
+};
 
 /* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
 const order = {
