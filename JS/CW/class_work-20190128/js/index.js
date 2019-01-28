@@ -80,3 +80,17 @@ let sectionArr = [{
 
 
 
+// create element
+const header = document.createElement('header');
+const h1 = document.createElement('h1');
+
+// add classes
+
+
+// add atribute
+
+
+// add text
+
+
+// paste to page
