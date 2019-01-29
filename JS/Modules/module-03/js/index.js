@@ -54,6 +54,7 @@ const isLoginUnique = function(allLogins, login) {
   // } else {
   //   return true;
   // };
+  // но можно и короче:
   return !allLogins.includes(login);
 };
 
