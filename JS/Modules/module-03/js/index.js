@@ -49,11 +49,12 @@ const isLoginValid = function(login) {
 };
 
 const isLoginUnique = function(allLogins, login) {
-  if (allLogins.includes(login)) {
-    return false;
-  } else {
-    return true;
-  };
+  // if (allLogins.includes(login)) {
+  //   return false;
+  // } else {
+  //   return true;
+  // };
+  return !allLogins.includes(login);
 };
 
 const addLogin = function(allLogins, login) {
