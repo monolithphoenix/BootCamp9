@@ -89,7 +89,7 @@ class Hamburger {
     Добавьте отсутсвующие поля по аналогии с примером.
   */
   Hamburger.SIZE_SMALL = 'SIZE_SMALL';
-  Hamburger.SIZE_LARGE = ...
+  Hamburger.SIZE_LARGE = 'SIZE_LARGE';
   
   Hamburger.SIZES = {
     [Hamburger.SIZE_SMALL]: {
@@ -99,8 +99,8 @@ class Hamburger {
   };
   
   Hamburger.STUFFING_CHEESE = 'STUFFING_CHEESE';
-  Hamburger.STUFFING_SALAD = ...
-  Hamburger.STUFFING_MEAT = ...
+  Hamburger.STUFFING_SALAD = 'STUFFING_SALAD';
+  Hamburger.STUFFING_MEAT = 'STUFFING_MEAT';
   
   Hamburger.STUFFINGS = {
     [Hamburger.STUFFING_CHEESE]: {
@@ -110,7 +110,7 @@ class Hamburger {
   };
   
   Hamburger.TOPPING_SPICE = 'TOPPING_SPICE';
-  Hamburger.TOPPING_SAUCE = ...
+  Hamburger.TOPPING_SAUCE = 'TOPPING_SAUCE';
   
   Hamburger.TOPPINGS = {
     [Hamburger.TOPPING_SPICE]: {
