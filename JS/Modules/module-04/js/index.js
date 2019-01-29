@@ -48,20 +48,47 @@ function Cashier(name, productDatabase) {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
+
+  // - getCustomerMoney(value) - метод, получает число, деньги покупателя, и записывает его в поле customerMoney.
   this.getCustomerMoney = function(value) {
     return this.customerMoney = this.customerMoney + value; 
   };
-  this.countTotalPrice = function(order) {
+
+  // - countTotalPrice(order) - метод, получает объект списока покупок, считает общую стоимость покупок.
+  this.countTotalPrice = function(obj) {
     let sum = 0;
-    for(el of order) {
-    return sum = sum + (el * this.productDatabase.el);
+    for(el in obj) {
+    sum = sum + obj[el] * this.productDatabase[el];
+    };
+    return sum;
+  };
+
+  // - countChange(totalPrice) - метод, считает сдачу, разницу между общей суммой покупок и деньгами покупателя.
+  // * Обязательно проверьте что customerMoney не меньше чем значение totalPrice
+  // * Если денег было передано достаточно, возвращает разницу денег.
+  // * Если в customerMoney меньше денег чем в totalPrice, возвращает null 
+  this.countChange = function() {
+    if (this.customerMoney > totalPrice) {
+      return this.customerMoney - totalPrice;
+    } else {
+      return null;
     };
   };
-  // this.countChange(totalPrice) {
-  //   if(this.customerMoney > totalPrice) {
-  //     return 
-  //   }
-  // };
+  // - onSuccess(change) - метод, выводит в консоль строку `Спасибо за покупку, ваша сдача ${change}!`.
+  this.onSuccess = function() {
+    return console.log(`Спасибо за покупку, ваша сдача ${change}!`);
+  };
+  
+  // - onError() - метод, выводит в консоль строку 'Очень жаль, вам не хватает денег на покупки'
+  this.onError = function () {
+    return console.log('Очень жаль, вам не хватает денег на покупки');
+  };
+    
+  // - reset() - метод, сбрасывает поле customerMoney 0.
+  this.reset = function () {
+    this.customerMoney = 0;
+  };
+
 };
 
 /* Заказ пользователя хранится в виде объекта следующего формата. "имя-продукта":"количество-единиц" */
@@ -74,7 +101,6 @@ const order = {
 
 /* Пример использования */
 const mango = new Cashier('Mango', products);
-// console.log(mango.customerMoney + 300);
 // Проверяем исходные значения полей
 console.log(mango.name); // Mango
 console.log(mango.productDatabase); // ссылка на базу данных продуктов (объект products)
@@ -85,7 +111,7 @@ console.log(mango.customerMoney); // 0
 const totalPrice = mango.countTotalPrice(order);
 
 // Проверям что посчитали
-// console.log(totalPrice); // 110
+console.log(totalPrice); // 110
 
 // Вызываем getCustomerMoney для запроса денег покупателя
 mango.getCustomerMoney(300);
