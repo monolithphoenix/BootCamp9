@@ -80,17 +80,79 @@ let sectionArr = [{
 
 
 
-// create element
-const header = document.createElement('header');
-const h1 = document.createElement('h1');
+// ===== CREATE element =====
+    const root = document.querySelector('.root');
 
-// add classes
+    // start header
+    const header = document.createElement('header');
+    const h1 = document.createElement('h1');
+    // end header
+
+    //start main
+    const main = document.createElement('main');
+    const mainDiv = document.createElement('div');
+    const mainDivDiv = document.createElement('div');
+    const mainDivDivFigure = document.createElement('figure');
+    const mainDivDivFigureImg = document.createElement('img');
+    const mainDivDivFigureFigcaption = document.createElement('figcaption');
+
+    const mainDivDiv2 = document.createElement('div');
+    const mainDivDiv2P = document.createElement('p');
+    const mainDivDiv2PStrong = document.createElement('strong');
+
+    const mainDivQuote = document.createElement('div');
+    const mainBlockquote = document.createElement('blockquote');
+
+    const mainDivTimeline = document.createElement('div');
+    const mainDivTimelineH2 = document.createElement('h2');
+
+    
+    // end main
+
+// ===== ADD classes =====
 
 
-// add atribute
+// ===== ADD atribute =====
+h1.setAttribute('id','title');
+main.setAttribute('id','main');
+mainDiv.setAttribute('id','first-row');
+mainDivDiv.setAttribute('id','img-div');
+mainDivDivFigureImg.setAttribute('id','image');
+mainDivDivFigureImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg');
+mainDivDivFigureImg.setAttribute('alt','Profile picture of Albert Einstein.');
+mainDivDivFigureFigcaption.setAttribute('id','img-caption');
+mainDivDiv2.setAttribute('id','tribute-info');
+mainDivQuote.setAttribute('id','quote');
 
 
-// add text
+// ===== ADD text =====
+h1.textContent = 'Albert Einstein';
+mainDivDivFigureFigcaption.textContent = 'Profile picture of Albert Einstein';
+mainDivDiv2PStrong.textContent = 'Albert Einstein';
+mainDivDiv2P.textContent = " was a German-born theoretical physicist. He developed the theory of relativity, one of the two pillars of modern physics. Einstein's work is also known for its influence on the philosophy of science. Einstein is best known in popular culture for his mass-energy equivalence formula. He received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect, a pivotal step in the evolution of quantum theory.";
+mainBlockquote.textContent = 'Anyone who has never made a mistake has never tried anything new';
+
+// ===== PASTE to page =====
+root.append(header);
+    header.append(h1);
+root.append(main);
+    main.append(mainDiv);
+        mainDiv.append(mainDivDiv);
+            mainDivDiv.append(mainDivDivFigure);
+                mainDivDivFigure.append(mainDivDivFigureImg);
+                mainDivDivFigure.append(mainDivDivFigureFigcaption);
+            mainDiv.append(mainDivDiv2);
+                mainDivDiv2.append(mainDivDiv2P);
+                mainDivDiv2P.prepend(mainDivDiv2PStrong);
+    main.append(mainDivQuote);
+        mainDivQuote.append(mainBlockquote);
+    main.append(mainDivTimeline);
+        mainDivTimeline.append(mainDivTimelineH2);
 
 
-// paste to page
+
+
+
+
+// ===== CONSOLE =====
+console.log(root);
