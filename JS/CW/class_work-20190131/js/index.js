@@ -21,14 +21,15 @@ function timer() {
         // console.log(hour);
     let day = Math.floor(delta / (1000*60*60*24));
         // console.log(day);
-    secText.textContent = sec > 10 ? sec : '0'+sec;
-    minText.textContent = min > 10 ? min : '0'+min;
-    houText.textContent = hour > 10 ? hour : '0'+hour;
-    dayText.textContent = day > 10 ? day : '0'+day;
+    secText.textContent = sec > 9 ? sec : '0'+sec;
+    minText.textContent = min > 9 ? min : '0'+min;
+    houText.textContent = hour > 9 ? hour : '0'+hour;
+    dayText.textContent = day > 9 ? day : '0'+day;
 
 
 }
 
-
-
 setInterval(timer,1000);
+
+let seeBlock = document.querySelector('.cd-box');
+console.log(seeBlock.widht);
