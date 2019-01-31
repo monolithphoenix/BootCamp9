@@ -25,11 +25,9 @@ function timer() {
     minText.textContent = min > 9 ? min : '0'+min;
     houText.textContent = hour > 9 ? hour : '0'+hour;
     dayText.textContent = day > 9 ? day : '0'+day;
-
-
 }
 
 setInterval(timer,1000);
 
-let seeBlock = document.querySelector('.cd-box');
-console.log(seeBlock.widht);
+// let seeBlock = document.querySelector('.cd-box');
+// console.log(seeBlock.widht);
