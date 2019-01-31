@@ -85,3 +85,9 @@ div.cd-box{
     padding: 10px;
     font-size: 25px;
 }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+}
