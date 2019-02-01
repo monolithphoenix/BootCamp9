@@ -41,3 +41,17 @@ const galleryItems = [
     alt: "2 Lion on Grass Field during Daytime"
   }
 ];
+
+const gallery = document.querySelector('.gallery');
+console.log(gallery);
+gallery.setAttribute('style', 'list-style:none; display:flex; flex-wrap:wrap');
+for (const el of galleryItems) {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
+  gallery.appendChild(li);
+  li.appendChild(img).setAttribute('width', '300px');
+  li.appendChild(img).setAttribute('height', '200px');
+  img.setAttribute('alt', el.alt);
+  img.setAttribute('src', el.url);
+  img.setAttribute('style', 'object-fit:cover');
+}
