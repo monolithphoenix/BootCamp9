@@ -14,3 +14,27 @@
     - Каждый следующий div после первого, должен быть шире и выше предыдущего
       на 10px
 */
+
+// const root = document.querySelector('.root');
+function createBoxes(num) {
+  // Var1
+    // let count = 0;
+    // while (count < num) {
+    //   count++;
+    //   const div = document.createElement('div');
+    //   div.style.width = `${30+10*count}px`;
+    //   div.style.height = `${30+10*count}px`;
+    //   div.style.backgroundColor = `rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256})`;
+    //   root.appendChild(div);
+    // };
+  // Var2
+    for (let index = 0; index < num; index++) {
+      const div = document.createElement('div');
+      div.style.width = `${30+10*index}px`;
+      div.style.height = `${30+10*index}px`;
+      div.style.backgroundColor = `rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256})`;
+      root.appendChild(div);
+    };
+}
+createBoxes(10)
+// console.log(root);
