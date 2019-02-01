@@ -13,17 +13,6 @@
 */
 
 let catArr = Array.from(document.querySelector('.categories').children);
-let qqq = document.querySelector('.categories');
-console.log(catArr);
-
-// console.log(catArr);
-// for (const el of catArr) {
-//     console.log(el.firstChild.nodeValue.trim());
-    
-// }
-
-
-// let catArr = Array.from(cat.children)
 
 for (const el of catArr) {
     let catElCont = el.children[0].children.length;
