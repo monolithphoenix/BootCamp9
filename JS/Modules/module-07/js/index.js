@@ -32,3 +32,36 @@ const posts = [
     link: 'link-3.com'
   }
 ];
+
+function createMovieCard(obj) {
+  const div = document.createElement('div');
+  const img = document.createElement('img');
+  const divBody = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const p = document.createElement('p');
+  const a = document.createElement('a');
+// Вкладываем тэги
+  div.appendChild(img).classList.add('movie__image');
+  div.appendChild(divBody).classList.add('movie__body');
+  divBody.appendChild(h2).classList.add('movie__title');
+  divBody.appendChild(p).classList.add('movie__description');
+  divBody.appendChild(a);
+// Добавляем атрибуты
+  a.setAttribute('href', obj.link)
+  img.setAttribute('src', obj.img);
+  img.setAttribute('alt', 'movie image');
+// Вставляем текст
+  h2.textContent = obj.title;
+  p.textContent = obj.text;
+  a.textContent = 'Read more...';
+// Выводим карточку в <body>
+  return root.appendChild(div).classList.add('movie');
+}
+
+function createCards() {
+  for (const el of posts) {
+    createMovieCard(el);
+  }
+}
+
+createCards();
