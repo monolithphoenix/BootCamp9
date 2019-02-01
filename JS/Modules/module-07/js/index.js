@@ -47,21 +47,21 @@ function createMovieCard(obj) {
   divBody.appendChild(p).classList.add('movie__description');
   divBody.appendChild(a);
 // Добавляем атрибуты
-  a.setAttribute('href', obj.link)
   img.setAttribute('src', obj.img);
-  img.setAttribute('alt', 'movie image');
+  img.setAttribute('alt', 'some picture');
+  a.setAttribute('href', obj.link)
 // Вставляем текст
   h2.textContent = obj.title;
   p.textContent = obj.text;
   a.textContent = 'Read more...';
 // Выводим карточку в <body>
   return root.appendChild(div).classList.add('movie');
-}
+};
 
 function createCards() {
   for (const el of posts) {
     createMovieCard(el);
-  }
-}
+  };
+};
 
 createCards();
