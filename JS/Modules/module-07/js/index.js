@@ -33,7 +33,7 @@ const posts = [
   }
 ];
 
-function createMovieCard(obj) {
+function createPostCard(obj) {
   const div = document.createElement('div');
   const img = document.createElement('img');
   const divBody = document.createElement('div');
@@ -58,10 +58,10 @@ function createMovieCard(obj) {
   return root.appendChild(div).classList.add('movie');
 };
 
-function createCards() {
+function createCards(posts) {
   for (const el of posts) {
-    createMovieCard(el);
+    createPostCard(el);
   };
 };
 
-createCards();
+createCards(posts);
