@@ -3,19 +3,11 @@
   Даны 2 инпута, абзац и кнопка. По нажатию на кнопку 
   получите числа которые бьудут введены в инпуты и запишите их сумму в span.result.
 */
-const add = document.querySelector('button[data-action="add"]');
-const result = document.querySelector('.result');
-const expression = document.querySelector('.expression');
-let a;
-let b;
-
-expression.addEventListener(, getArg);
-add.addEventListener('click', getSum);
+const add = document.querySelector('button');
 
 function getSum() {
-
-  result.textContent
+  let sum = Array.from(document.querySelectorAll('input')).reduce((acc, val) => acc+Number(val.value),0);
+  document.querySelector('.result').textContent = sum;
 }
-console.log(add);
-console.log(result);
-console.log(expression.firstElementChild);
+
+add.addEventListener('click', getSum);
