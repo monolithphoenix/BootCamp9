@@ -12,7 +12,6 @@
 const NBU = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
 
 const root = document.querySelector('#root');
-const button = document.querySelector('button');
 
 const sortBlock = document.createElement('div');
 const list = document.createElement('ul');
@@ -27,6 +26,8 @@ sortBlock.appendChild(input).setAttribute('placeholder','Enter currency name...'
 sortBlock.appendChild(btnSortUp).textContent = 'Sort by rate ▲';
 sortBlock.appendChild(btnSortDown).textContent = 'Sort by rate ▼';
 sortBlock.appendChild(btnSortABC).textContent = 'Sort by ABC';
+
+const button = document.querySelector('button');
 
 function fetchData(link, sortRule) {
     fetch(link)
