@@ -5,10 +5,19 @@
   - Создайте класс Counter, который хранит одно поле value - текущее значение счетчика
   - Класс принимает один параметр - onChange, функцию для обновления интерфейса при изменении счетчика
   - Добавьте классу методы increment и decrement для увеличения и ументшение значения счетчика
-  - Привяжите вызовы методов и значение счетчика к раметке
+  - Привяжите вызовы методов и значение счетчика к разметке
 */
-const sub = document.qurySelector('button[data-action="sub"]');
-const add = document.qurySelector('button[data-action="add"]');
-class Counter{
-  
-}
+const sub = document.querySelector('button[data-action="sub"]');
+const add = document.querySelector('button[data-action="add"]');
+const val = document.querySelector('.value');
+
+// class Counter{
+//   this.value = val.textContent;
+//  
+// };
+
+console.log(sub);
+console.log(add);
+console.log(val);
+console.log(val.textContent);
+
