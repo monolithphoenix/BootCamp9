@@ -11,13 +11,32 @@ const sub = document.querySelector('button[data-action="sub"]');
 const add = document.querySelector('button[data-action="add"]');
 const val = document.querySelector('.value');
 
-// class Counter{
-//   this.value = val.textContent;
-//  
-// };
+class Counter{
+  constructor(onChange) {
+    this.value = 0;
+    this.onChange = onChange;
+    this.onChange(this.value);
+    this.onChange = this.onChange.bind(this);
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+  }
+  
+  increment() {
+    this.value++;
+    this.onChange(this.value);
+  }
 
-console.log(sub);
-console.log(add);
-console.log(val);
-console.log(val.textContent);
+  decrement() {
+    this.value--;
+    this.onChange(this.value);
+  }
+};
 
+const result = new Counter(update);
+
+function update (num) {
+  val.textContent = num;
+}
+
+sub.addEventListener('click', result.decrement);
+add.addEventListener('click', result.increment);
