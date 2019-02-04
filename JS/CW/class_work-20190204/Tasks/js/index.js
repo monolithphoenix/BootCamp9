@@ -11,25 +11,47 @@
 // 4)В інпут вводимо назву валюти текст або cc і отримуємо курс конкретної валюти. 
 const NBU = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json';
 
+const root = document.querySelector('#root');
+const button = document.querySelector('button');
+
+const sortBlock = document.createElement('div');
+const list = document.createElement('ul');
+const input = document.createElement('input');
 const btnSortUp = document.createElement('button');
 const btnSortDown = document.createElement('button');
 const btnSortABC = document.createElement('button');
-const input = document.createElement('input');
 
-const list = document.createElement('ul');
+root.appendChild(sortBlock);
+root.appendChild(list);
+sortBlock.appendChild(input).setAttribute('placeholder','Enter currency name...');
+sortBlock.appendChild(btnSortUp).textContent = 'Sort by rate ▲';
+sortBlock.appendChild(btnSortDown).textContent = 'Sort by rate ▼';
+sortBlock.appendChild(btnSortABC).textContent = 'Sort by ABC';
 
-function fetchData(link) {
+function fetchData(link, sortRule) {
     fetch(link)
         .then(res => res.json())
         .then(data => createList(data))
         .catch(err => console.log(err))
 };
+fetchData(NBU);
 
 function createList(arr) {
-    console.log(arr);
-    
     const string = arr.reduce((acc, el) => acc + `<li><span>${el.txt}</span><span>${el.rate}</span><span>${el.cc}</span></li>`, '');
-    root.innerHTML = `<ul>${string}</ul>`;
+    
+    list.innerHTML = string;
 }
 
-fetchData(NBU);
+
+// input.addEventListener('submit', filterInput);
+// button.addEventListener('click', gerSort);
+
+// function gerSort(e) {
+//     e.preventDefault();
+//     e.target.value
+// }
+// function filterInput(e) {
+//     e.preventDefault();
+// };
+
+// .sort((a, b) => b.rate - a.rate)

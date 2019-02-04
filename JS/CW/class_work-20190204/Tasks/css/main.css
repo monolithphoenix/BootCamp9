@@ -2,16 +2,52 @@
 
 body {
     margin: auto;
+    font-family: sans-serif;
 }
 
-#root ul{
+#root {
     margin: auto;
     width: 600px;
 }
-
-#root ul li{
-    margin: auto;
-    width: 600px;
+#root div {
     display: flex;
     justify-content: space-between;
+}
+#root ul li{
+    /* margin: auto; */
+    display: flex;
+    justify-content: space-between;
+}
+input {
+    /* margin: 2px; */
+    padding-left: 10px;
+    height: 28px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+button {
+    /* margin: 2px; */
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+ul {
+    margin-top: 10px;
+}
+li {
+    padding: 5px;
+    border-bottom: 1px solid blue;
+}
+
+li span:nth-child(1) {
+    width: 275px;
+}
+li span:nth-child(2) {
+    width: 100px;
+}
+li span:nth-child(3) {
+    text-align: right;
+    width: 50px;
 }
