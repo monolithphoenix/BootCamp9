@@ -8,5 +8,24 @@
     если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
 */
 
-const LIST = document.querySelector('.input-list');
-LIST.addEventListener('', )
+const list = document.querySelectorAll('input')
+
+function addListener(arg) {
+  for (const el of arg) {
+    el.addEventListener('blur', checkInput);
+  };
+}
+
+function checkInput() {
+  for (const el of list) {
+    if (el.value.length === Number(el.dataset.length)) {
+      el.classList.remove('invalid');
+      el.classList.add('valid');
+    } else {
+      el.classList.remove('valid');
+      el.classList.add('invalid');
+    };
+  };
+}
+
+addListener(list)
