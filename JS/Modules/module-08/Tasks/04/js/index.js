@@ -11,7 +11,7 @@
 const FORM = document.querySelector('.question-form');
 const PARA = document.querySelector('.result')
 const PARATEXT = PARA.textContent;
-console.log(PARATEXT);
+// console.log(PARATEXT);
 
 FORM.addEventListener('submit', action);
 
