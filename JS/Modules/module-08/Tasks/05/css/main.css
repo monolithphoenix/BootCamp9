@@ -1,0 +1,17 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.images {
+  display: grid;
+  width: 648px;
+  margin: 0 auto;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  grid-gap: 8px;
+  list-style: none;
+  box-shadow: 0
