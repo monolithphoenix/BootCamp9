@@ -13,23 +13,18 @@ input.addEventListener('input', pushMessage);
 
 
 function addMessage() {
-    console.log(input.previousElementSibling);
+    // console.log(input.previousElementSibling);
     input.previousElementSibling.textContent = 'Input is in focus!';
     input.previousElementSibling.classList.toggle('glow');
 }
 
 function delMessage() {
-  console.log(input.previousElementSibling);
+  // console.log(input.previousElementSibling);
   input.previousElementSibling.textContent = '';
   input.previousElementSibling.classList.toggle('glow');
 }
 
 function pushMessage() {
-  console.log(input.nextElementSibling);
+  // console.log(input.nextElementSibling);
   input.nextElementSibling.textContent = `Current input value: ${input.value}`;
 }
-
-
-  
-  // console.log(input.previousElementSibling);
-  // input.previousElementSibling.textContent = 'Input is in focus!';
