@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <title>BC9-JS-CW-2019/02/05-Task</title>
+</head>
+<body>
+    <div class="app" id="app">
+        <form class="form" v-on:submit="addTodo">
+            <input class="input form__input" v-model="inputVal"/>
+            <button class="btn form__submit-btn" type="submit">Add</button>
+        </form>
+        <ul class="todo-list">
+            <!-- <li class="todo-list__item">
+            TEST
+            <button class="btn todo-list__item-remove">
+                <i class="fa fa-times"></i>
+            </button>
+            </li> -->
+        </ul>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
