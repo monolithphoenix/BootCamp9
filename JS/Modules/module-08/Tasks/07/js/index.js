@@ -7,3 +7,6 @@
   - Если введено подходящее количество, то outline инпута становится зеленым, 
     если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
 */
+
+const LIST = document.querySelector('.input-list');
+LIST.addEventListener('', )
