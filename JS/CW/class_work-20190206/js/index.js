@@ -9,10 +9,11 @@ const lastFMGeoTracks = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettoptrac
 
 trackList.appendChild(ul);
 
+window.addEventListener('DOMContentLoaded', getTracks);
 
-getTracks(lastFMGeoTracks);
-function getTracks(link) {
-    fetch(link)
+// getTracks(lastFMGeoTracks);
+function getTracks() {
+    fetch(lastFMGeoTracks)
         .then(res => res.json())
         .then(data => getObj(data.tracks))
         .catch(err => console.log(err))
