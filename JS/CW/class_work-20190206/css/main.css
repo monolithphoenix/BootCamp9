@@ -4,6 +4,7 @@ body {
     margin: auto;
     font-family: sans-serif;
     background-image: url("../img/BGI.jpg");
+    background-repeat: no-repeat;
     background-attachment:fixed;
     background-size: cover;
 }
