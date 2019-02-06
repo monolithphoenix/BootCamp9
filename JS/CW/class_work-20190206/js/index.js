@@ -35,22 +35,24 @@ function createRequest(e) {
 
     let search = artist + '|' + composition;
     console.log(search);
-    const youtubeSearch = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwWGzULP4Q9plH7a9ATpZW_8o2ZgJOH8&part=snipet&maxResults=1&q=${artist}|${composition}`
+    const youtubeSearch = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwWGzULP4Q9plH7a9ATpZW_8o2ZgJOH8&part=snippet&maxResults=1&q=${artist}|${composition}`;
 
     getYTSearch(youtubeSearch);
 
     function getYTSearch(link) {
         fetch(link)
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+            .then(res => res.json())
+            .then(data => startVideo(data.items[0].id.videoId))
+            .catch(err => console.log(err))
     }
-
- 
-    // console.log(e.target.closest('li').children[1].textContent);
-    // console.log(e.target.closest('li').children[2].textContent);
 }
 
+
+const iframe = document.querySelector('iframe');
+function startVideo(link) {
+    iframe.src = `https://www.youtube.com/embed/${link}?autoplay=1`;
+    iframe.classList.add('unhide');
+}
 // let search; 
 
 // const youtubeSearch = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwWGzULP4Q9plH7a9ATpZW_8o2ZgJOH8&part=snipet&maxResults=1&q=${search}`
