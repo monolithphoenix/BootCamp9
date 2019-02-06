@@ -5,7 +5,7 @@
 
 const trackList = document.querySelector('.tracks')
 const ul = document.createElement('ul');
-const lastFMGeoTracks = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=ukraine&api_key=412e51e107155c7ffabd155a02371cbd&limit=25&format=json';
+const lastFMGeoTracks = 'https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=ukraine&api_key=412e51e107155c7ffabd155a02371cbd&limit=25&format=json';
 
 trackList.appendChild(ul);
 
