@@ -27,3 +27,42 @@ function getObj(obj) {
         </li>`
     }
 }
+
+ul.addEventListener('click', createRequest)
+function createRequest(e) {
+    const artist = e.target.closest('li').children[1].textContent;
+    const composition = e.target.closest('li').children[2].textContent;
+
+    let search = artist + '|' + composition;
+    console.log(search);
+    const youtubeSearch = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwWGzULP4Q9plH7a9ATpZW_8o2ZgJOH8&part=snipet&maxResults=1&q=${artist}|${composition}`
+
+    getYTSearch(youtubeSearch);
+
+    function getYTSearch(link) {
+        fetch(link)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    }
+
+ 
+    // console.log(e.target.closest('li').children[1].textContent);
+    // console.log(e.target.closest('li').children[2].textContent);
+}
+
+// let search; 
+
+// const youtubeSearch = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAGwWGzULP4Q9plH7a9ATpZW_8o2ZgJOH8&part=snipet&maxResults=1&q=${search}`
+
+// getYTSearch(youtubeSearch);
+// function getYTSearch(link) {
+//     fetch(link)
+//         .then(res => res.json())
+//         .then(data => console.log(data))
+//         .catch(err => console.log(err))
+// }
+
+// youtrube iframe
+// <iframe src={`https://www.youtube.com/embed/${videoID}?autoplay=1`} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen>
+// </iframe>
