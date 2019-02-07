@@ -9,11 +9,11 @@
     transition-duration: .5s;
 }
 .root:hover {
-    transform: rotate(180deg);
+    transform: rotate(900deg);
     top: calc(50% - 10vw);
     left: calc(50% - 10vw);
     width: 20vw;
     height: 20vw;
     background-color: blue;
-    transition-duration: .5s;
+    transition-duration: 2s;
 }
