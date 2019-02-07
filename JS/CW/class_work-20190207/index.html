@@ -8,8 +8,28 @@
     <title>BC9-JS-CW-2019/02/07</title>
 </head>
 <body>
-    <div class="root">
-    </div>
+    <div class="content-placeholder"></div>
+    
+<!-- Шаблон для вставки списка типа "имя + фамилия" -->
+    <template id="example-template">
+        <ul>
+            {{#each people}}
+            <li>{{firstName}} {{lastName}}</li>
+            {{/each}}
+        </ul>
+    </template>
+
+<!-- Шаблон для вставки списка навыков -->
+    <template id="example-temp">
+        <ul>
+            {{#each temp}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </template>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="./js/index.js" style="h"></script>
 </body>
 </html>
