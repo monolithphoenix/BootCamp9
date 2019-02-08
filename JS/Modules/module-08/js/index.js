@@ -13,13 +13,11 @@ const galleryItems = [
 
 const targetConteiner = document.querySelector('.js-image-gallery');
 
-targetConteiner.innerHTML = `
-<div class="fullview">
-<img src=${galleryItems[0].fullview} alt="alt text 1">
+targetConteiner.innerHTML = 
+`<div class="fullview">
+  <img src=${galleryItems[0].fullview} alt="alt text 1">
 </div>
-<ul class="preview">
-</ul>
-`;
+<ul class="preview"></ul>`;
 
 const fullviewList = document.querySelector('.fullview');
 const previewList = document.querySelector('.preview');
@@ -27,18 +25,23 @@ const previewList = document.querySelector('.preview');
 window.addEventListener('DOMContentLoaded', pushPreviewItems)
 function pushPreviewItems() {
   for (let i = 0; i < galleryItems.length; i++) {
-    previewList.innerHTML += `<li><img src=${galleryItems[i].preview} data-fullview=${galleryItems[i].fullview} alt=${galleryItems[i].alt}></li>`
+    previewList.innerHTML += `<li><img src=${galleryItems[i].preview} data-fullview=${galleryItems[i].fullview} alt='${galleryItems[i].alt}'></li>`
   };
 }
 
 previewList.addEventListener('click', changeFullview);
 function changeFullview(e) {
   if (e.target.nodeName === 'IMG') {
-    // console.log(e.target.dataset.fullview);
     fullviewList.firstElementChild.src = e.target.dataset.fullview;
+    fullviewList.firstElementChild.alt = e.target.alt;
+    for (const el of previewList.childNodes) {
+      el.firstChild.classList.remove('selected');
+    }
+    e.target.classList.add('selected');
   }
 }
 
+// previewList.innerHTML += `<div class='selector'><div>`
 /*
   Создайте компонент галлереи изображений следующего вида.
   
@@ -61,27 +64,27 @@ function changeFullview(e) {
       
     Реализуйте функционал:
       
-      - image-gallery есть изначально в HTML-разметке как контейнер для компонента.
+      + image-gallery есть изначально в HTML-разметке как контейнер для компонента.
     
-      - fullview содержит в себе увеличенную версию выбранного изображения из preview, и
+      + fullview содержит в себе увеличенную версию выбранного изображения из preview, и
         создается динамически при загрузке страницы.
     
-      - preview это список маленьких изображений, обратите внимание на атрибут data-fullview,
+      + preview это список маленьких изображений, обратите внимание на атрибут data-fullview,
         он содержит ссылку на большое изображение. preview и его элементы, также создаются 
         динамически, при загрузке страницы.
         
-      - При клике в элемент preview, необходимо подменить src тега img внутри fullview
+      + При клике в элемент preview, необходимо подменить src тега img внутри fullview
         на url из data-атрибута выбраного элемента.
         
-      - По умолчанию, при загрузке страницы, активным должен быть первый элемент preview.
+      + По умолчанию, при загрузке страницы, активным должен быть первый элемент preview.
         
-      - Изображений может быть произвольное количество.
+      + Изображений может быть произвольное количество.
       
-      - Используйте делегирование для элементов preview.
+      + Используйте делегирование для элементов preview.
       
-      - При клике, выбраный элемент из preview должен получать произвольный эффект выделения.
+      + При клике, выбраный элемент из preview должен получать произвольный эффект выделения.
       
-      - CSS-оформление и имена классов на свой вкус.
+      + CSS-оформление и имена классов на свой вкус.
       
       
     🔔 Изображения маленькие и большие можно взять с сервиса https://www.pexels.com/, выбрав при скачивании
@@ -89,21 +92,6 @@ function changeFullview(e) {
       Подберите изображения одинаковых пропорций.
 */
 
-// const previewImages = document.querySelector('.preview')
-// previewImages.addEventListener('click', changeFulview);
-// console.log(menu.children[0]);
-
-function toggleClass() {
-  // console.log(event);
-  // if (event.target === menu) {
-  //   for (const el of menu.children) {el.firstElementChild.classList.remove('active')};
-  //   event.target.classList.add('active');  
-  // }
-  if (event.target.nodeName !== 'UL') {
-
-  }
-
-}
 
 /*
   Массив объектов с данными для создания компонента выглядит следующим образом.
