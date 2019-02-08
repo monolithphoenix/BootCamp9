@@ -22,7 +22,6 @@
   margin-top: 10px;
 }
 .preview li {
-  /* width: 180px; */
   border: 5px solid #ffffff;
 }
 .preview img {
@@ -33,9 +32,3 @@
   outline: 5px solid #64df60;
   transition: all .5s;
 }
-/* .selector {
-  position: absolute;
-  width: 130px;
-  height: 90px;
-  background-color: rgb(2, 238, 73);
-} */
