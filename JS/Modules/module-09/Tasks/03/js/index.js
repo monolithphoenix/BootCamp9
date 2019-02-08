@@ -25,7 +25,23 @@
 const clockface = document.querySelector(".js-clockface");
 const startBtn = document.querySelector(".js-timer-start");
 const stopBtn = document.querySelector(".js-timer-stop");
+startBtn.addEventListener('click', startTimer);
+stopBtn.addEventListener('click', stopTimer);
 
+function startTimer() {
+  const STARTTIME = Date.now();
+  
+  ID = setInterval(() => {
+    let newTime = Date.now();
+    let diferense = newTime-STARTTIME;
+    console.log(diferense);
+    
+    updateClockface(clockface, diferense);
+  }, 100);
+};
+function stopTimer() {
+  clearInterval(ID);
+}
 const timer = {
   startTime: null,
   deltaTime: null,
@@ -41,20 +57,26 @@ const timer = {
 * аргумент time это кол-во миллисекунд
 */
 function updateClockface(elem, time) {
-  // Используйте функцию getFormattedTime из задания #1
-  // elem.textContent = getFormattedTime(time);
+  elem.textContent = getFormattedTime(time);
 }
 
 /*
 * Подсветка активной кнопки
 */
 function setActiveBtn(target) {
-  if(target.classList.contains('active')) {
-    return;
-  }
+  if(target.classList.contains('active')) {return;};
   
   startBtn.classList.remove('active');
   stopBtn.classList.remove('active');
   
   target.classList.add('active');
+}
+function getFormattedTime(time) {
+  let date = new Date(time);
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  let mil = Math.floor(date.getMilliseconds()/100);
+  if(min<=9)(min='0'+min.toString());
+  if(sec<=9)(sec='0'+sec.toString());
+  return `${min}:${sec}.${mil}`;
 }
