@@ -1,3 +1,32 @@
+const galleryItems = [
+  { preview: 'img/preview-1.jpeg', fullview: 'img/fullview-1.jpeg', alt: "alt text 1" },
+  { preview: 'img/preview-2.jpeg', fullview: 'img/fullview-2.jpeg', alt: "alt text 2" },
+  { preview: 'img/preview-3.jpeg', fullview: 'img/fullview-3.jpeg', alt: "alt text 3" },
+  { preview: 'img/preview-4.jpeg', fullview: 'img/fullview-4.jpeg', alt: "alt text 4" },
+  { preview: 'img/preview-5.jpeg', fullview: 'img/fullview-5.jpeg', alt: "alt text 5" },
+  { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
+];
+
+const targetConteiner = document.querySelector('.js-image-gallery');
+targetConteiner.innerHTML = `
+<div class="fullview">
+<!-- Если выбран первый элемент из preview -->
+<img src=${galleryItems[0].fullview} alt="alt text 1">
+</div>
+<!-- li будет столько, сколько объектов в массиве картинок. Эти 3 для примера -->
+<ul class="preview">
+<li><img src=${galleryItems[0].preview} data-fullview=${galleryItems[0].fullview} alt=${galleryItems[0].alt}></li>
+</ul>
+`;
+
+const previewList = document.querySelector('.preview');
+// console.log(galleryItems.length);
+
+for (let i = 0; i < galleryItems.length; i++) {
+  // const element = array[i];
+  previewList.innerHTML += `<li><img src=${galleryItems[i].preview} data-fullview=${galleryItems[i].fullview} alt=${galleryItems[i].alt}></li>
+  `
+}
 /*
   Создайте компонент галлереи изображений следующего вида.
   
@@ -12,7 +41,8 @@
         <li><img src="img/preview-2.jpeg" data-fullview="img/fullview-2.jpeg" alt="alt text 2"></li>
         <li><img src="img/preview-3.jpeg" data-fullview="img/fullview-3.jpeg" alt="alt text 3"></li>
       </ul>
-    </div>   
+    </div>  
+    
     
     🔔 Превью компонента: https://monosnap.com/file/5rVeRM8RYD6Wq2Nangp7E4TkroXZx2
       
@@ -47,19 +77,35 @@
       Подберите изображения одинаковых пропорций.
 */
 
+const previewImages = document.querySelector('.preview')
+previewImages.addEventListener('click', changeFuulview);
+// console.log(menu.children[0]);
+
+function toggleClass() {
+  // console.log(event);
+  // if (event.target === menu) {
+  //   for (const el of menu.children) {el.firstElementChild.classList.remove('active')};
+  //   event.target.classList.add('active');  
+  // }
+  if (event.target.nodeName !== 'UL') {
+
+  }
+
+}
+
 /*
   Массив объектов с данными для создания компонента выглядит следующим образом.
   Замените пути на соотвествующие вашим, или назовите изображения аналогично.
 */
 
-const galleryItems = [
-  { preview: 'img/preview-1.jpeg', fullview: 'img/fullview-1.jpeg', alt: "alt text 1" },
-  { preview: 'img/preview-2.jpeg', fullview: 'img/fullview-2.jpeg', alt: "alt text 2" },
-  { preview: 'img/preview-3.jpeg', fullview: 'img/fullview-3.jpeg', alt: "alt text 3" },
-  { preview: 'img/preview-4.jpeg', fullview: 'img/fullview-4.jpeg', alt: "alt text 4" },
-  { preview: 'img/preview-5.jpeg', fullview: 'img/fullview-5.jpeg', alt: "alt text 5" },
-  { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
-];
+// const galleryItems = [
+//   { preview: 'img/preview-1.jpeg', fullview: 'img/fullview-1.jpeg', alt: "alt text 1" },
+//   { preview: 'img/preview-2.jpeg', fullview: 'img/fullview-2.jpeg', alt: "alt text 2" },
+//   { preview: 'img/preview-3.jpeg', fullview: 'img/fullview-3.jpeg', alt: "alt text 3" },
+//   { preview: 'img/preview-4.jpeg', fullview: 'img/fullview-4.jpeg', alt: "alt text 4" },
+//   { preview: 'img/preview-5.jpeg', fullview: 'img/fullview-5.jpeg', alt: "alt text 5" },
+//   { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
+// ];
 
 
 /*
