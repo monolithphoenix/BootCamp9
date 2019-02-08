@@ -4,16 +4,16 @@
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  margin-top: 10px;
-  width: calc(180px*5 + 20px*5);
+  margin: 25px;
+  width: calc(120px*5 + 10px*5);
   /* outline: 1px solid blue; */
 }
 .fullview {
   box-shadow: 0 0 7px 0px #777;
-  border: 10px solid #ffffff;
+  border: 5px solid #ffffff;
 }
 .fullview img {
-  width: 980px;
+  width: 640px;
 }
 .preview {
   display: flex;
@@ -23,8 +23,9 @@
 }
 .preview li {
   /* width: 180px; */
-  border: 10px solid #ffffff;
+  border: 5px solid #ffffff;
 }
 .preview img {
-  width: 180px;
+  width: 120px;
+  cursor: pointer;
 }
