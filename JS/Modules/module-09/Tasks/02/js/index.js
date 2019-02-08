@@ -11,7 +11,14 @@
 */
 
 function getFormattedTime(time) {
-  return '';
+  let date = new Date(time);
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  let mil = Math.floor(date.getMilliseconds()/100);
+  if(min<=9)(min='0'+min.toString());
+  if(sec<=9)(sec='0'+sec.toString());
+
+  return `${min}:${sec}.${mil}`;
 }
 
 console.log(
