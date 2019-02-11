@@ -23,6 +23,16 @@ const DELAY = 1000;
 
 let goodsAmount = 100;
 
+function processOrder(amount) {
+  if (typeof amount !== 'number') {
+    return err = 'Некоректный ввод!';
+  } else if (amount <= goodsAmount) {
+    return result = 'Ваш заказ готов!';
+  } else {
+    return result = 'К сожалению на складе не достаточно товаров!';
+  };
+}
+
 // Вызовы функции для проверки
 processOrder(50)
   .then(result => console.log(result)) // Ваш заказ готов!
