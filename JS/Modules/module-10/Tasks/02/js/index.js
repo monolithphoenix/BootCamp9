@@ -24,11 +24,30 @@
 const input = document.querySelector("input");
 const form = document.querySelector(".search-form");
 const result = document.querySelector(".result");
-const API_URL = "";
+const API_URL = "https://api.github.com/users/";
 
 form.addEventListener("submit", fetchUserData);
 
 /*
   @param {FormEvent} evt
 */
-function fetchUserData(evt) {}
+function fetchUserData(evt) {
+  evt.preventDefault();
+  const askAPI = API_URL+input.value;
+  console.log(askAPI);
+  fetch(askAPI)
+    .then(res => res.json())
+    .then(data => getData(data))
+    .catch(err => console.log(err));
+}
+
+function getData(data) {
+  const resultData = data;
+  console.log(resultData);
+  result.innerHTML = `
+    <ul style='list-style:none'>
+      <li><p>Avatar: <img src=${resultData.avatar_url} alt='avatar' width='60'></p></li>
+      <li><p>Username: ${resultData.login}</p></li>
+      <li><p>Bio: ${resultData.bio}</p></li>
+      <li><p>Public repos: ${resultData.public_repos}</p></li>`    
+}
