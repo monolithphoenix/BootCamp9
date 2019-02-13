@@ -48,8 +48,8 @@ function getData(data) {
   console.log(resultData);
   result.innerHTML = `
     <ul style='list-style:none'>
-      <li><p>Country name: ${resultData.name}</p></li>
+      <li><p>Country name: ${resultData.name}, ${resultData.nativeName}</p></li>
       <li><p>Capital: ${resultData.capital}</p></li>
-      <li><p>Main currency:  ${resultData.currencies[0].name}</p></li>
+      <li><p>Main currency:  ${resultData.currencies[0].name}, ${resultData.currencies[0].code}</p></li>
       <li><p>Flag:</p><p><img src=${resultData.flag} alt='flag' width='320'></p></li>`    
 }
