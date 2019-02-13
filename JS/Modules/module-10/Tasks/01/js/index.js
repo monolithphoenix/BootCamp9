@@ -1,5 +1,5 @@
-// Module 09
-/* Task 10
+// Module 10
+/* Task 01
   Написать функцию fetchCountryData, которая использует
   API_URL + текущее значение input для составления запроса.
   
