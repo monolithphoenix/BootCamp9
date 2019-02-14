@@ -1,7 +1,10 @@
 const a = '-';
 const b = '+';
-const btn = document.querySelector('#add-elemant')
-btn.addEventListener('click', getOne);
+const add = document.querySelector('#add-elemant');
+const stop = document.querySelector('#stop');
+add.addEventListener('click', getOne);
+stop.addEventListener('click', stopThisShit);
+
 
 for (let i = 0; i < 50; i++) {
     output.innerText += a;
@@ -16,29 +19,29 @@ function getArr() {
 function getOne() {
     let position = 0;
     let direction = {move: 'right'};
-    setInterval(function() {
-        if (ARR[0] === 1) {
+    
+    timerID = setInterval(() => {
+        moveScenario()        
+      }, 100)
+
+    function moveScenario() {
+        if (ARR[0] === b) {
             direction.move = 'right'
-        } else if (ARR[ARR.length-1] === 1) {
+            console.log(0);
+        } else if (ARR[ARR.length-1] === b) {
             direction.move = 'left'
+            console.log(ARR.length);
         }
 
-        // if (position === 0) {
-        //     ARR.splice(position, 1, b);
-        //     output.innerText = ARR.join('');
-        //     ++position;
-        // } else 
         if (direction.move === 'right') {
-            moveRight();
             ++position;
+            moveRight();
         } else if (direction.move === 'left'){
             moveLeft();
             --position;
         }
-        console.log(position);
-        
-      }, 100)
-
+    }
+    
     function moveRight() {
         ARR.splice(position, 1, b);
         ARR.splice(position-1, 1, a);
@@ -53,3 +56,7 @@ function getOne() {
     
 };
 
+
+function stopThisShit() {
+    clearInterval(timerID);
+}
