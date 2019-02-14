@@ -19,7 +19,22 @@
   Сделать минимальный графический интерфейс в виде панели с полями и кнопками. 
   А так же панелью для вывода результатов операций с бэкендом.
 */
-function getAllUsers() { const prom = new Promise() return prom}
+const URL = 'https://test-users-api.herokuapp.com/users/';
+const form = document.querySelector(".search-form");
+const userTable = document.querySelector(".users-table");
+
+function getAllUsers() {
+  const prom = new Promise((res, rej) => {
+    res();
+    rej();
+  });
+  return prom
+}
+fetch(getAllUsers)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
 function getUserById(id) {}
 function addUser(name, age) {}
 function функция removeUser(id) {}
