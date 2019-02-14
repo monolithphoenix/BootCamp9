@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>BC9-JS-M11-T01</title>
+</head>
+<body>
+    <div class="products"></div>
+
+    <template id="temp">
+      <ul>
+        {{#each items}}
+        <li>
+          <span class="name">Name: {{name}}</span>
+          <span class="count">Count: {{count}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </template>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
