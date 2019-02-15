@@ -22,13 +22,15 @@ function getOne() {
     
     timerID = setInterval(() => {
         moveScenario()        
-      }, 100)
+      }, 50)
 
     function moveScenario() {
-        if (ARR[0] === b) {
+        if (ARR[0] === b || ARR[position-1] === b) {
             direction.move = 'right'
             console.log(0);
-        } else if (ARR[ARR.length-1] === b) {
+            console.log(position);
+            
+        } else if (ARR[ARR.length-1] === b || ARR[position+1] === b || ARR[position+2] === b) {
             direction.move = 'left'
             console.log(ARR.length);
         }
@@ -41,11 +43,16 @@ function getOne() {
             --position;
         }
     }
-    
+
     function moveRight() {
-        ARR.splice(position, 1, b);
-        ARR.splice(position-1, 1, a);
-        output.innerText = ARR.join('');
+        if (position === 0) {
+            ARR.splice(position, 1, b);
+            output.innerText = ARR.join('');
+        } else {
+            ARR.splice(position, 1, b);
+            ARR.splice(position-1, 1, a);
+            output.innerText = ARR.join('');
+        }
     }
     
     function moveLeft() {
