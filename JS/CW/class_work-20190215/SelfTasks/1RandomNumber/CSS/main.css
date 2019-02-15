@@ -31,14 +31,14 @@
     box-shadow: 0 2px 20px -8px;
     font-family: 'Comfortaa', serif;
     font-size: 1rem;
-    transition: all 1s;
+    transition: all .2s;
     cursor: pointer;
 }
 
 .button:hover {
     background-color: rgb(165, 200, 165);
     box-shadow: none;
-    transition: all 1s;
+    transition: all .2s;
 }
 
 button.stop:hover {
