@@ -10,7 +10,7 @@ function writeRandomNumber() {
     if (boolen) {
         intervalID = setInterval(() => {
             paragraph.innerText = Math.floor(Math.random()*10)
-        }, 20);       
+        }, 40);       
         boolen = false;
         button.innerText = 'STOP';
         button.classList.add('stop');
