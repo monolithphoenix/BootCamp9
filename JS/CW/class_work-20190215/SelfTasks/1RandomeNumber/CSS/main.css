@@ -2,7 +2,6 @@
 *{margin: 0;padding: 0;box-sizing: border-box;outline: transparent;}
 
 #root {
-
     margin: 2rem auto;
     width: 150px;
     height: 150px;
@@ -20,25 +19,27 @@
     font-size: 4rem;
 }
 
-.buttonStop {
+.button {
     position: absolute;
     width: 90px;
     height: 30px;
-    top: 65%;
+    top: 75%;
     left: 50%;
-    transform: translateX(-50%);
-    /* padding: 5px 25px; */
+    transform: translate(-50%, -50%);
     border-radius: 5px;
-    border-style: dashed;
+    border-style: hidden;
     box-shadow: 0 1px 10px -4px;
     font-family: 'Comfortaa', serif;
     transition: all 1s;
     cursor: pointer;
 }
 
-.buttonStop:hover {
-    /* padding: 7px 29px; */
-    width: 94px;
-    height: 32px;
+.button:hover {
+    background-color: rgb(165, 200, 165);
+    box-shadow: none;
     transition: all 1s;
+}
+
+button.stop:hover {
+    background-color: rgb(245, 165, 165);
 }

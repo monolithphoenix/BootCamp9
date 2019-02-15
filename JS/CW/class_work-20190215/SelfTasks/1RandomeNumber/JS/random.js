@@ -1,5 +1,5 @@
 const paragraph = document.querySelector('.number');
-const button = document.querySelector('.buttonStop');
+const button = document.querySelector('.button');
 let boolen = true;
 
 console.log(paragraph.innerText);
@@ -13,10 +13,12 @@ function writeRandomNumber() {
         }, 20);       
         boolen = false;
         button.innerText = 'STOP';
+        button.classList.add('stop');
     } else {
         clearInterval(intervalID);
         boolen = true;
         button.innerText = 'START';
+        button.classList.remove('stop');
     }
 }
 
