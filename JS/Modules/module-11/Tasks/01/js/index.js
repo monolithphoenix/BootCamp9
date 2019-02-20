@@ -12,7 +12,7 @@ const fruits = [
   { name: 'Cheese', count: 128 },
   { name: 'Milk', count: 293 },
 ];
-const products = {fruits}
+const products = {fruits};
 console.log(products);
 
 const container = document.querySelector('.products');
