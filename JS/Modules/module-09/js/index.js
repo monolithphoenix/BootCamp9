@@ -44,48 +44,89 @@
   - Функционал кнопки button.js-take-lap при клике - сохранение текущего времени секундомера 
     в массив и добавление в ul.js-laps нового li с сохраненным временем в формате xx:xx.x
 */
+const stopwatch = document.querySelector(".stopwatch");
 const clockface = document.querySelector(".js-time");
-const startBtn = document.querySelector(".js-start");
-const resetBtn = document.querySelector(".js-reset");
-startBtn.addEventListener('click', startTimer);
-resetBtn.addEventListener('click', stopTimer);
+const lapsList = document.querySelector(".js-laps");
 
-function startTimer() {
-  const STARTTIME = Date.now();
-  
-  ID = setInterval(() => {
-    let newTime = Date.now();
-    let diferense = newTime-STARTTIME;
-    console.log(diferense);
-    
+const startBtn = document.querySelector(".js-start");
+const lapBtn = document.querySelector(".js-take-lap");
+const resetBtn = document.querySelector(".js-reset");
+
+let frizeTimer = 0;
+let diferense = 0;
+
+startBtn.addEventListener('click', startPauseTimer);
+lapBtn.addEventListener('click', getCurentTimerValue);
+resetBtn.addEventListener('click', resetTimer);
+stopwatch.addEventListener('click', changeButtonColor);
+
+function resetTimer() {
+    stopTimer();
+    frizeTimer = 0;
+    diferense = 0;
+    startBtn.innerText = 'Start';
+    lapsList.innerHTML = '';
     updateClockface(clockface, diferense);
-  }, 100);
-  console.log(startBtn.value);
+}
+
+function getCurentTimerValue() {
+  let curentTimerValue = diferense;
+  lapsList.innerHTML += `<li>${getFormattedTime(curentTimerValue)}</li>`;
+}
+
+function startPauseTimer() {
+  const STARTTIME = Date.now();
+  if (startBtn.textContent === 'Start') {
+    startBtn.innerText = 'Pause';
+    ID = setInterval(() => {
+      let newTime = Date.now();
+      diferense = newTime-STARTTIME;
+      updateClockface(clockface, diferense);
+    }, 100)
+    return;
+  };
+  if (startBtn.textContent === 'Pause') {
+    startBtn.innerText = 'Continue';
+    return stopTimer();
+  };
+  if (startBtn.textContent === 'Continue') {
+    startBtn.innerText = 'Pause';
+    ID = setInterval(() => {
+      let newTime = Date.now();
+      diferense = newTime-STARTTIME+frizeTimer;
+      updateClockface(clockface, diferense);
+    }, 100)
+  }
 };
+
 function stopTimer() {
+  frizeTimer = diferense;
   clearInterval(ID);
 }
-const timer = {
-  startTime: null,
-  deltaTime: null,
-  id: null
-};
 
+// const timer = {
+//   startTime: null,
+//   deltaTime: null,
+//   id: null
+// };
+
+// Вставка времени в HTML
 function updateClockface(elem, time) {
   elem.textContent = getFormattedTime(time);
 }
 
-/*
-* Подсветка активной кнопки
-*/
-function setActiveBtn(target) {
-  if(target.classList.contains('active')) {return;};
-  
-  startBtn.classList.remove('active');
-  stopBtn.classList.remove('active');
-  
-  target.classList.add('active');
+// Подсветка активной кнопки на 0.5 сек
+function changeButtonColor(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    startBtn.classList.remove('active');
+    lapBtn.classList.remove('active');
+    resetBtn.classList.remove('active');
+    e.target.classList.add('active');
+    setTimeout(() => e.target.classList.remove('active'), 500)
+  }
 }
+
+// Преобразователь времени
 function getFormattedTime(time) {
   let date = new Date(time);
   let min = date.getMinutes();

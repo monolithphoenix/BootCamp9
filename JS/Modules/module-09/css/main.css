@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    list-style: none;
     padding: 0;
     margin: 0;
   }
@@ -7,22 +8,24 @@
   body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
   }
   
   .stopwatch {
-    padding: 30px;
+    margin-top: 1rem;
+    padding: 2rem;
     text-align: center;
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
     color: #212121;
-    border-radius: 2px;
+    border-radius: 0.125rem;
   }
   
   .time {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     font-family: "Roboto Mono", monospace;
-    font-size: 80px;
+    font-size: 5rem;
   }
   
   .btn {
@@ -31,14 +34,24 @@
     border: 0;
     background-color: #212121;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 0.5rem 2rem;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 1.75rem;
     border-radius: 2px;
     font-family: "Roboto", sans-serif;
+    transition: 1.5s background-color;
+  }
+  .btn.js-start {
+    width: 200px;
   }
   
   .active {
     background-color: #2196F3;
+    transition: 0.2s background-color;
   }
   
+  .laps {
+    margin-top: 1rem;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.25rem;
+  }
