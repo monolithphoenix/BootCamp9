@@ -6,13 +6,14 @@
   
   Отрендерите список в DOM по данным из массива listItems.
 */
-
-const products = [
+const fruits = [
   { name: 'Apples', count: 50 },
   { name: 'Grapes', count: 44 },
   { name: 'Cheese', count: 128 },
   { name: 'Milk', count: 293 },
 ];
+const products = {fruits}
+console.log(products);
 
 const container = document.querySelector('.products');
 const newSource = document.querySelector('#temp').innerHTML.trim();
