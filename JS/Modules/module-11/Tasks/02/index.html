@@ -8,12 +8,19 @@
     <title>BC9-JS-M11-T02</title>
 </head>
 <body>
-  <div class="post">
-    <h2 class="title">Post title placeholder</h2>
-    <p class="text">Post text placeholder</p>
-    <span class="fav-icon"></span>
-  </div>    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <div class="conteiner"></div>
+
+  <template id='template'>
+    <div class="post">
+      <h2 class="title">{{title}}</h2>
+      <p class="text">{{text}}</p>
+      {{#if isFav}}
+      <span class="fav-icon"><img src="https://image.flaticon.com/icons/svg/290/290413.svg" alt="" width="50"></span>
+      {{/if}}
+    </div>
+  </template>
+
+  <script src="./js/handlebars.min.js"></script>
   <script src="./js/index.js"></script>
 </body>
 </html>

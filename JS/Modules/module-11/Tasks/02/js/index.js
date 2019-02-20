@@ -39,3 +39,11 @@ const posts = [
     isFav: false
   }
 ];
+
+const cont = document.querySelector('.conteiner');
+const template = document.querySelector('#template').innerHTML.trim();
+
+const templateFunction = Handlebars.compile(template);
+
+const newMarkup = posts.reduce((acc, item) => acc + templateFunction(item), '');
+cont.innerHTML += newMarkup;
