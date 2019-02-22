@@ -36,6 +36,8 @@ fetch(getAllUsers)
   .catch(err => console.log(err))
 
 function getUserById(id) {}
-function addUser(name, age) {}
-function функция removeUser(id) {}
-function функция updateUser(id, user) {}
+function addUser(name, age) {
+  
+}
+function removeUser(id) {}
+function updateUser(id, user) {}
