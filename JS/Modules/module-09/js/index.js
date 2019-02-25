@@ -1,3 +1,4 @@
+"use strict"
 /*
   Создайте скрипт секундомера.  
   По ссылке можно посмотреть пример выбрав Stopwatch http://www.online-stopwatch.com/full-screen-stopwatch/
@@ -51,9 +52,11 @@ const lapsList = document.querySelector(".js-laps");
 const startBtn = document.querySelector(".js-start");
 const lapBtn = document.querySelector(".js-take-lap");
 const resetBtn = document.querySelector(".js-reset");
-
-let frizeTimer = 0;
-let diferense = 0;
+const timer = {
+  startTime: null,
+  deltaTime: null,
+  id: null
+};
 
 startBtn.addEventListener('click', startPauseTimer);
 lapBtn.addEventListener('click', getCurentTimerValue);
@@ -62,15 +65,15 @@ stopwatch.addEventListener('click', changeButtonColor);
 
 function resetTimer() {
     stopTimer();
-    frizeTimer = 0;
-    diferense = 0;
+    timer.startTime = 0;
+    timer.deltaTime = 0;
     startBtn.innerText = 'Start';
     lapsList.innerHTML = '';
-    updateClockface(clockface, diferense);
+    updateClockface(clockface, timer.deltaTime);
 }
 
 function getCurentTimerValue() {
-  let curentTimerValue = diferense;
+  let curentTimerValue = timer.deltaTime;
   lapsList.innerHTML += `<li>${getFormattedTime(curentTimerValue)}</li>`;
 }
 
@@ -78,10 +81,10 @@ function startPauseTimer() {
   const STARTTIME = Date.now();
   if (startBtn.textContent === 'Start') {
     startBtn.innerText = 'Pause';
-    ID = setInterval(() => {
+    timer.id = setInterval(() => {
       let newTime = Date.now();
-      diferense = newTime-STARTTIME;
-      updateClockface(clockface, diferense);
+      timer.deltaTime = newTime-STARTTIME;
+      updateClockface(clockface, timer.deltaTime);
     }, 100)
     return;
   };
@@ -91,24 +94,20 @@ function startPauseTimer() {
   };
   if (startBtn.textContent === 'Continue') {
     startBtn.innerText = 'Pause';
-    ID = setInterval(() => {
+    timer.id = setInterval(() => {
       let newTime = Date.now();
-      diferense = newTime-STARTTIME+frizeTimer;
-      updateClockface(clockface, diferense);
+      timer.deltaTime = newTime-STARTTIME+timer.startTime;
+      updateClockface(clockface, timer.deltaTime);
     }, 100)
   }
 };
 
 function stopTimer() {
-  frizeTimer = diferense;
-  clearInterval(ID);
+  timer.startTime = timer.deltaTime;
+  clearInterval(timer.id);
 }
 
-// const timer = {
-//   startTime: null,
-//   deltaTime: null,
-//   id: null
-// };
+
 
 // Вставка времени в HTML
 function updateClockface(elem, time) {
