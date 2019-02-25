@@ -1,10 +1,12 @@
 const paragraph = document.querySelector('.number');
 const button = document.querySelector('.button');
-let boolen = true;
 
 console.log(paragraph.innerText);
 
 button.addEventListener('click', writeRandomNumber);
+
+// Version 2
+let boolen = true;
 
 function writeRandomNumber() {
     if (boolen) {
