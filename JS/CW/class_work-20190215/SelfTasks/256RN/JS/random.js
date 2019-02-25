@@ -21,16 +21,3 @@ function writeRandomNumber() {
         body.style = `background-color:rgb(${paragraph.innerText}, ${paragraph.innerText}, ${paragraph.innerText})`;
     }
 }
-
-// Version 1
-    // function writeRandomNumber() {
-    //     let number = getRandomNumber();
-    //     while (Number(paragraph.innerText) === number) {
-    //         number = getRandomNumber();
-    //         console.log('while');        
-    //     };
-    //     paragraph.innerText = number;
-    // }
-    // function getRandomNumber() {
-    //     return Math.floor(Math.random()*10)
-    // };
