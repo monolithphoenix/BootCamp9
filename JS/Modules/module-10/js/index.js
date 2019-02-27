@@ -21,23 +21,99 @@
 */
 const URL = 'https://test-users-api.herokuapp.com/users/';
 const form = document.querySelector(".search-form");
-const userTable = document.querySelector(".users-table");
+const UserTable = document.querySelector(".users-table");
+const UserName = document.getElementById('name');
+const UserAge = document.getElementById('age');
+const UserID = document.getElementById('id');
+
+const ButtonAddUser = document.getElementById('add');
+const ButtonShowAllUsers = document.getElementById('get');
+const ButtonFindUser = document.getElementById('find');
+
+ButtonAddUser.addEventListener('click', addUser);
+ButtonShowAllUsers.addEventListener('click', getAllUsers);
+ButtonFindUser.addEventListener('click', getUserById);
 
 function getAllUsers() {
-  const prom = new Promise((res, rej) => {
-    res();
-    rej();
-  });
-  return prom
+  event.preventDefault();
+  fetch(URL)
+    .then(res => res.json())
+    .then(data => {
+      UserTable.innerHTML =
+        `<tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>ID</th>
+        <th></th>
+      </tr>`;
+      for (const el of data.data) {
+        UserTable.innerHTML +=
+          `<tr>
+          <td>${el.name}</td>
+          <td>${el.age}</td>
+          <td>${el.id}</td>
+          <td></td>
+        </tr>`
+      }
+    })
+    .catch(err => console.log(err))
 }
-fetch(getAllUsers)
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err))
 
-function getUserById(id) {}
-function addUser(name, age) {
-  
+function getUserById() {
+  event.preventDefault();
+  console.log('getUserById working now');
+  if (!UserID.value) {return console.log('empty field');
+  };
+
+  fetch((URL + UserID.value))
+    .then(res => res.json())
+    .then(data => {
+      UserTable.innerHTML =
+        `<tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>ID</th>
+        <th></th>
+        </tr>`;
+      UserTable.innerHTML +=
+        `<tr>
+        <td>${data.data.name}</td>
+        <td>${data.data.age}</td>
+        <td>${data.data.id}</td>
+        <td></td>
+        </tr>`
+    })
+    .catch(err => console.log(err))
 }
-function removeUser(id) {}
+
+function addUser() {
+  event.preventDefault();
+  fetch(URL, {
+    method: 'POST',
+    body: JSON.stringify({ name: UserName.value, age: Number(UserAge.value) }),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  });
+  UserTable.innerHTML +=
+    `<tr>
+      <td>${UserName.value}</td>
+      <td>${UserAge.value}</td>
+      <td></td>
+      <td></td>
+    </tr>` 
+}
+function removeUser() {
+  console.log(event);
+  
+  // fetch('https://test-users-api.herokuapp.com/users', {
+  //   method: 'DELETE',
+  //   body: JSON.stringify({ name: "NEW", age: 12}),
+  //   headers: {
+  //     Accept: 'application/json',
+  //     'Content-Type': 'application/json',
+  //   }
+  // });
+}
 function updateUser(id, user) {}
