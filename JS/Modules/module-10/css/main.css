@@ -88,6 +88,26 @@ body {
 	background-color: #4caf50;
 	color: white;
 }
-.hidden {
-	
+.out-right {
+	position: relative;
+    transform: translateX(-140%);
+    transition-duration: 1.5s;
+	transition-timing-function: ease;
+	background: red;
+}
+.out-right tr:hover {
+	background: red;
+    transition-duration: 1.5s;
+}
+.del {
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: #00796b;
+}
+.del:hover {
+	background-color: #004c40;
 }

@@ -19,6 +19,7 @@
   Сделать минимальный графический интерфейс в виде панели с полями и кнопками. 
   А так же панелью для вывода результатов операций с бэкендом.
 */
+"use strict"
 const URL = 'https://test-users-api.herokuapp.com/users/';
 const form = document.querySelector(".search-form");
 const UserTable = document.querySelector(".users-table");
@@ -33,9 +34,11 @@ const ButtonFindUser = document.getElementById('find');
 ButtonAddUser.addEventListener('click', addUser);
 ButtonShowAllUsers.addEventListener('click', getAllUsers);
 ButtonFindUser.addEventListener('click', getUserById);
+UserTable.addEventListener('click', removeUser);
 
-function getAllUsers() {
+function getAllUsers(event) {
   event.preventDefault();
+    console.log('getAllUsers working now');
   fetch(URL)
     .then(res => res.json())
     .then(data => {
@@ -45,25 +48,27 @@ function getAllUsers() {
         <th>Age</th>
         <th>ID</th>
         <th></th>
-      </tr>`;
+        </tr>`;
       for (const el of data.data) {
         UserTable.innerHTML +=
           `<tr>
           <td>${el.name}</td>
           <td>${el.age}</td>
           <td>${el.id}</td>
-          <td></td>
-        </tr>`
-      }
+          <td class='del'>DEL</td>
+          </tr>`
+      };
     })
     .catch(err => console.log(err))
 }
 
-function getUserById() {
+function getUserById(event) {
   event.preventDefault();
-  console.log('getUserById working now');
-  if (!UserID.value) {return console.log('empty field');
-  };
+    console.log('getUserById working now');
+    console.log(event.ta);
+  
+
+  if (!UserID.value) {return console.log('empty field')};
 
   fetch((URL + UserID.value))
     .then(res => res.json())
@@ -81,31 +86,54 @@ function getUserById() {
         <td>${data.data.age}</td>
         <td>${data.data.id}</td>
         <td></td>
-        </tr>`
+        </tr>`;
+        new Audio('./audio/DemonicLaughter4.mp3').play();
     })
     .catch(err => console.log(err))
 }
 
-function addUser() {
+function addUser(event) {
   event.preventDefault();
-  fetch(URL, {
-    method: 'POST',
-    body: JSON.stringify({ name: UserName.value, age: Number(UserAge.value) }),
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    }
-  });
-  UserTable.innerHTML +=
-    `<tr>
-      <td>${UserName.value}</td>
-      <td>${UserAge.value}</td>
-      <td></td>
-      <td></td>
-    </tr>` 
+  if (UserName.hidden) {return UserName.hidden=false};
+  if (!UserName.value) {return console.log('empty field')};
+    console.log('push data to server');
+
+
+  // fetch(URL, {
+  //   method: 'POST',
+  //   body: JSON.stringify({ name: UserName.value, age: Number(UserAge.value) }),
+  //   headers: {
+  //     Accept: 'application/json',
+  //     'Content-Type': 'application/json',
+  //   }
+  // });
+  // UserTable.innerHTML +=
+  //   `<tr>
+  //     <td>${UserName.value}</td>
+  //     <td>${UserAge.value}</td>
+  //     <td></td>
+  //     <td></td>
+  //   </tr>` 
+  if (!UserName.hidden) {return UserName.hidden=true};
 }
-function removeUser() {
-  console.log(event);
+
+function removeUser(event) {
+      console.log('removeUser working now');
+      console.log(event);
+      console.log(event.target);
+      console.log(event.target.classList.contains('del'));
+    if (event.target.classList.contains('del')) {
+        console.log(event.target.parentNode);
+      event.target.style = 'background-color: transparent;'
+      event.target.innerText = '<-----';
+      new Audio('./audio/NOOO.mp3').play();
+      
+      const tableRow = event.target.parentNode.parentNode;
+      tableRow.classList.add('out-right');
+      setTimeout(() => {
+        tableRow.parentNode.removeChild(tableRow);      
+      }, 1500);
+    }
   
   // fetch('https://test-users-api.herokuapp.com/users', {
   //   method: 'DELETE',
