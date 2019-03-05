@@ -1,0 +1,7 @@
+*{margin: 0;padding: 0;box-sizing: border-box;list-style: none;font-family: sans-serif;}
+
+.App {
+  height: 100vh;
+  background-color: #e9ebee;
+  display: flex;
+}
