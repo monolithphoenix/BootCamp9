@@ -1,0 +1,3 @@
+rcc React Class Create
+rsc React Statement Component
+...p ...PropType

@@ -1,0 +1,25 @@
+.Cart_hide {
+    background-color: #fff;
+    width: 20rem;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: -20rem;
+    padding: 15px;
+    transition: .5s;
+}
+.close {
+    cursor: pointer;
+    font-weight: 700;
+}
+.Cart_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Prime styles */
+.Cart {
+    right: 0;
+}

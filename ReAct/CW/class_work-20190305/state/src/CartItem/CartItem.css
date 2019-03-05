@@ -1,0 +1,7 @@
+.CartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border: 1px solid;
+    margin: 5px 0;
+}
