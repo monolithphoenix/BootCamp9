@@ -3,6 +3,7 @@ import './Wrapper.css'
 import Cart from '../Cart/Cart';
 import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
+import Form from '../Form/Form';
 
 class Wrapper extends Component {
     state = {
@@ -115,6 +116,9 @@ class Wrapper extends Component {
         ],
         cart: [],
         isCartShow: false,
+        text: '',
+        email: '',
+        pass: '',
     }
 
     addToCart = (event) => {
@@ -132,15 +136,34 @@ class Wrapper extends Component {
         }))
     }
 
+    inputChange = (e) => {
+        let value = e.target.value;
+        this.setState({
+            [e.target.name]: value,
+        });
+    }
+
+    formSubmit = (e) => {
+        e.preventDefault();
+        let obj = {
+            login: this.state.text,
+            email: this.state.email,
+            pass: this.state.pass,
+        };
+        console.log(obj);
+        
+    }
+
     render() {
-        const {phones, cart, isCartShow} = this.state;
+        const {phones, cart, text, email, pass, formSubmit, isCartShow} = this.state;
         return (
             <div className='Wrapper'>
                 <Header cart={cart.length} toogleCart={this.toogleCart}/>
-                {isCartShow && <Cart cart={cart} toogleCart={this.toogleCart}/>}
+                {/* {isCartShow && <Cart cart={cart} toogleCart={this.toogleCart}/>} */}
                 {/* {isCartShow ? <Cart toogleCart={this.toogleCart}/> : null} */}
                 {/* <Cart isCartShow='isCartShow' toogleCart={this.toogleCart}/> */}
-                <ItemList phones={phones} addToCart={this.addToCart}/>                
+                <Form text={text} email={email} pass={pass} formSubmit={this.formSubmit} inputChange={this.inputChange}/>
+                {/* <ItemList phones={phones} addToCart={this.addToCart}/>                 */}
             </div>
         );
     }
