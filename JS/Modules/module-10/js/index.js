@@ -94,8 +94,17 @@ function getUserById(event) {
 
 function addUser(event) {
   event.preventDefault();
-  if (UserName.hidden) {return UserName.hidden=false};
-  if (!UserName.value) {return console.log('empty field')};
+  
+  if (UserName.hidden) {
+    if (UserAge.hidden) {UserAge.hidden=false};
+    return UserName.hidden=false
+  };
+
+  if (!UserAge.value) {
+    if (!UserName.value) {console.log('empty Name field')};
+    return console.log('empty Age field')
+  };
+
     console.log('push data to server');
 
 
