@@ -1,0 +1,11 @@
+.ToDoListItem {
+    width: 20rem;
+    height: 5rem;
+    background: #fff;
+    margin: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    margin: .25rem;
+}
