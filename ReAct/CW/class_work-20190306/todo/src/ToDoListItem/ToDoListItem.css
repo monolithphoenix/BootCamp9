@@ -6,6 +6,9 @@
     display: flex;
     justify-content: space-between;
 }
+.crossed {
+    text-decoration: line-through;
+}
 button {
     margin: .25rem;
 }

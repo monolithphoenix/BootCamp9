@@ -7,8 +7,8 @@ import ToDoList from '../ToDoList/ToDoList';
 
 class App extends Component {
     state = {
-        // text: '',
         tasks: [],
+        whatToShow: [],
     };
 
     addTask = (e) => {
@@ -17,18 +17,21 @@ class App extends Component {
         const newTask = {
             text: e.target.text.value,
             id: Date.now(),
+            done: false,
         };
-        this.setState(prev=>({ tasks: [...prev.tasks, newTask] }))
+        this.setState(prev => ({ tasks: [...prev.tasks, newTask], whatToShow: [...prev.whatToShow, newTask]}))
     };
 
     deleteTask = (e) => {
         const ID = Number(e.target.parentNode.parentNode.id);
-        const delTask = this.state.tasks.filter(el => el.id !== ID)
-        this.setState(prev=>({ tasks: delTask }))
+        const delTask = this.state.tasks.filter(el => el.id !== ID);
+        this.setState(() => ({ tasks: delTask, whatToShow: delTask }));
     };
 
     editTask = (e) => {
         const btn = e.target;
+        const taskID = Number(btn.parentNode.parentNode.id);
+        
         if(btn.innerText === 'Edit'){
             const input = document.createElement('input');
             input.value = btn.parentNode.parentNode.firstChild.innerText;
@@ -41,17 +44,53 @@ class App extends Component {
             btn.parentNode.before(span);
             btn.parentNode.parentNode.firstChild.remove();
             btn.innerText = 'Edit';
-            console.log(this.state.tasks);
-            
+            const editTask = this.state.tasks.map(el => el.id === taskID ? {...el, text: span.innerText} : el);
+            this.setState(() => ({ tasks: editTask, whatToShow: editTask }));
         };
     };
 
+    doneTask = (e) => {
+        e.target.classList.toggle('crossed');
+        const taskID = Number(e.target.parentNode.id);
+        const doneTask = this.state.tasks.map(el => el.id === taskID? {...el, done: !el.done} : el);
+        console.log(doneTask);
+        this.setState(() => ({ tasks: doneTask, whatToShow: doneTask,}));
+    };
+
+    showAllTasks = (e) => {
+        console.log('showAllTasks is working now!');
+        this.setState(() => ({ whatToShow: this.state.tasks }));
+    };
+    showCompleteTasks = (e) => {
+        console.log('showCompleteTasks is working now!');
+        const filteredTasks = this.state.tasks.filter(el => el.done);
+        this.setState(() => ({ whatToShow: filteredTasks }));
+    };
+    showUncompleteTasks = (e) => {
+        console.log('showUncompleteTasks is working now!');
+        const filteredTasks = this.state.tasks.filter(el => !el.done);
+        this.setState(() => ({ whatToShow: filteredTasks }));
+    };
+
+
     render() {
-        const {tasks, addTask, deleteTask, editTask} = this.state;
+        const {whatToShow, addTask, deleteTask, editTask, doneTask, showAllTasks, showCompleteTasks, showUncompleteTasks} = this.state;
+        
         return (
             <div className="App">
-                <Form addTask={this.addTask}/>
-                <ToDoList tasks={tasks} deleteTask={this.deleteTask} editTask={this.editTask}/>
+
+                <Form 
+                addTask={this.addTask} 
+                showAllTasks={this.showAllTasks} 
+                showCompleteTasks={this.showCompleteTasks} 
+                showUncompleteTasks={this.showUncompleteTasks}/>
+
+                <ToDoList 
+                whatToShow={whatToShow} 
+                deleteTask={this.deleteTask} 
+                editTask={this.editTask} 
+                doneTask={this.doneTask}/>
+
             </div>
         );
     };
