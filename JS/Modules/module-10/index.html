@@ -10,13 +10,15 @@
 <body>
   <div class="container">
     <form class="search-form">
+      <div style=' visibility: hidden;'></div>
       <input type="text" placeholder="Enter name" style="width: 214px;" id="name" hidden required>
       <input type="text" placeholder="Enter user ID" style="width: 214px;" id="id" hidden required>
       <input type="number" placeholder="Enter age" min="14" max="200" style="width: 94px;" id="age" hidden required>
-      <br>
-      <button class="mdc-btn" name="post" type="submit" id='add'>add new user</button>
-      <button class="mdc-btn" name="get" type="submit" id='find'>find user by ID</button>
-      <button class="mdc-btn" name="get" type="submit"id='get'>show all users</button>
+      <div>
+        <button class="mdc-btn" name="post" type="submit" id='add'>add new user</button>
+        <button class="mdc-btn" name="get" type="submit" id='find'>find user by ID</button>
+        <button class="mdc-btn" name="get" type="submit"id='get'>show all users</button>
+      </div>
     </form>
     <table class="users-table">
       <tr>

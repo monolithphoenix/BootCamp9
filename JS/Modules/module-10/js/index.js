@@ -4,13 +4,13 @@
   с которым потом можно работать. 
   
   Реализовать следующий функционал:
-  - функция getAllUsers() - должна вернуть текущий список всех пользователей в БД.
+  + функция getAllUsers() - должна вернуть текущий список всех пользователей в БД.
   
   - функция getUserById(id) - должна вернуть пользователя с переданным id.
   
-  - функция addUser(name, age) - должна записывать в БД юзера с полями name и age.
+  + функция addUser(name, age) - должна записывать в БД юзера с полями name и age.
   
-  - функция removeUser(id) - должна удалять из БД юзера по указанному id.
+  + функция removeUser(id) - должна удалять из БД юзера по указанному id.
   
   - функция updateUser(id, user) - должна обновлять данные пользователя по id. 
     user это объект с новыми полями name и age.
@@ -65,8 +65,6 @@ function getAllUsers(event) {
 function getUserById(event) {
   event.preventDefault();
     console.log('getUserById working now');
-    console.log(event.ta);
-  
 
   if (!UserID.value) {return console.log('empty field')};
 
@@ -97,7 +95,7 @@ function addUser(event) {
   
   if (UserName.hidden) {
     if (UserAge.hidden) {UserAge.hidden=false};
-    return UserName.hidden=false
+    return UserName.hidden=false;
   };
 
   if (!UserAge.value) {
@@ -106,51 +104,56 @@ function addUser(event) {
   };
 
     console.log('push data to server');
-
-
-  // fetch(URL, {
-  //   method: 'POST',
-  //   body: JSON.stringify({ name: UserName.value, age: Number(UserAge.value) }),
-  //   headers: {
-  //     Accept: 'application/json',
-  //     'Content-Type': 'application/json',
-  //   }
-  // });
-  // UserTable.innerHTML +=
-  //   `<tr>
-  //     <td>${UserName.value}</td>
-  //     <td>${UserAge.value}</td>
-  //     <td></td>
-  //     <td></td>
-  //   </tr>` 
-  if (!UserName.hidden) {return UserName.hidden=true};
+  fetch(URL, {
+    method: 'POST',
+    body: JSON.stringify({ name: UserName.value, age: Number(UserAge.value) }),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  });
+  UserTable.innerHTML +=
+    `<tr>
+      <td>${UserName.value}</td>
+      <td>${UserAge.value}</td>
+      <td></td>
+      <td></td>
+    </tr>` 
+  if (!UserName.hidden) {
+    if (!UserAge.hidden) {UserAge.hidden=true};
+    return UserName.hidden=true;
+  };
 }
 
 function removeUser(event) {
-      console.log('removeUser working now');
-      console.log(event);
-      console.log(event.target);
-      console.log(event.target.classList.contains('del'));
-    if (event.target.classList.contains('del')) {
-        console.log(event.target.parentNode);
-      event.target.style = 'background-color: transparent;'
-      event.target.innerText = '<-----';
-      new Audio('./audio/NOOO.mp3').play();
-      
-      const tableRow = event.target.parentNode.parentNode;
-      tableRow.classList.add('out-right');
-      setTimeout(() => {
-        tableRow.parentNode.removeChild(tableRow);      
-      }, 1500);
-    }
+    console.log('removeUser working now');
+    // console.log(event);
+    // console.log(event.target);
+    // console.log(event.target.classList.contains('del'));
+    // console.log(event.target.previousElementSibling.innerText);
+    const userID = event.target.previousElementSibling.innerText;
+
+  if (event.target.classList.contains('del')) {
+      console.log(event.target.parentNode);
+    event.target.style = 'background-color: transparent;'
+    event.target.innerText = '<-----';
+    new Audio('./audio/NOOO.mp3').play();
+    
+    const tableRow = event.target.parentNode.parentNode;
+    tableRow.classList.add('out-right');
+    setTimeout(() => {
+      tableRow.parentNode.removeChild(tableRow);      
+    }, 1500);
+  }
   
-  // fetch('https://test-users-api.herokuapp.com/users', {
-  //   method: 'DELETE',
-  //   body: JSON.stringify({ name: "NEW", age: 12}),
-  //   headers: {
-  //     Accept: 'application/json',
-  //     'Content-Type': 'application/json',
-  //   }
-  // });
+  fetch(URL+userID, {
+    method: 'DELETE',
+    // body: JSON.stringify({ name: "NEW", age: 12}),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+  });
 }
+
 function updateUser(id, user) {}
