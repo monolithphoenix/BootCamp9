@@ -1,0 +1,15 @@
+/* .App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+} */
+/* .App-header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+.App {text-align: center;}
+.App-header-title {text-transform: capitalize;}
+.App-noNews {color: red}

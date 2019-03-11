@@ -1,0 +1,15 @@
+.NewsListItem {
+    text-align: left; outline: 1px solid royalblue;}
+.NewsListItem div {
+    display: flex;
+    justify-content: space-between;
+}
+.NewsListItem h3 {
+    font-size: calc(0.5rem + 1vw);
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+.NewsListItem .Blue {
+    background-color: rgb(198, 211, 252);
+}
