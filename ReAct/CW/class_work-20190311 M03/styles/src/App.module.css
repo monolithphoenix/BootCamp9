@@ -1,9 +1,11 @@
+@value bgc from './var.css';
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 2.5s cubic-bezier(0.680, -0.550, 0.265, 1.550);
   height: 40vmin;
   pointer-events: none;
 }
@@ -20,7 +22,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: bgc;
 }
 
 @keyframes App-logo-spin {
