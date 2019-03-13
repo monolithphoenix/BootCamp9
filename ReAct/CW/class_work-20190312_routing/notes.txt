@@ -1,0 +1,2 @@
+How to install router module:
+	npm install --save react-router-dom

@@ -1,0 +1,18 @@
+.ToDoListItem {
+    width: 10rem;
+    min-height: 10rem;
+    background: #fff;
+    margin: .5rem;
+    padding: .5rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: oldlace;
+    box-shadow: 3px 3px 5px 0px;
+}
+.crossed {
+    text-decoration: line-through;
+}
+button {
+    margin: .25rem;
+}
