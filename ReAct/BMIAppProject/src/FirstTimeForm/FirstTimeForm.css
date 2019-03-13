@@ -1,0 +1,16 @@
+.FirstTimeForm{
+        margin: 20px;
+}
+.FirstTimeForm_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.FirstTimeForm_form__lable {
+    display: flex;
+    justify-content: space-between;
+}
+.FirstTimeForm_form input[type="number"],
+.FirstTimeForm_form input[type="date"] {
+    width: 150px;
+}
