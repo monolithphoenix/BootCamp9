@@ -1,15 +1,39 @@
 .NewsListItem {
-    text-align: left; outline: 1px solid royalblue;}
+    text-align: left;
+    outline: 1px solid royalblue;
+}
 .NewsListItem div {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    outline: 1px solid royalblue;
 }
 .NewsListItem h3 {
     font-size: calc(0.5rem + 1vw);
     cursor: pointer;
     overflow: hidden;
-    
+    /* flex-grow: 1; */
 }
-.NewsListItem .Blue {
+.NewsListItem img {
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.5s;
+}
+.NewsListItem_article {
+    transform: rotateX(90deg);
+    transition-duration: 0.5s;
+    height: 0;
+    overflow: hidden;
+}
+.Show {
+    transform: rotateX(0deg);
+    height: 85px;
+    transition-duration: 0.5s;
+}
+.Blue {
     background-color: rgb(198, 211, 252);
+    transition-duration: 1s;
+}
+.Rotate {
+    transform: rotateZ(180deg);
 }

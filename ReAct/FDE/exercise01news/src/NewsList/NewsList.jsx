@@ -6,7 +6,7 @@ import NewsListItem from '../NewsListItem/NewsListItem'
 const NewsList = ({news, article, showMoreInfo}) => {
     return (
         <ul className='NewsList'>
-            {news.map(el => <NewsListItem key={el.id} el={el} article={article} showMoreInfo={showMoreInfo} />)}
+            {news.map(el => <NewsListItem key={el.id} news={el} article={article.find(le => le.id === el.id)} showMoreInfo={showMoreInfo} />)}
         </ul>
     );
 };

@@ -11,31 +11,41 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.doFetch();
+  }
+
+  doFetch = () => {
     fetch(this.state.apiSearch+this.state.apiKey)
-              .then(res => res.json())
-              .then(data => {
-                // console.log(data);
-                this.setState(() => ({news: data.response.results}));
-                // console.log(this.state.news);
-                })
-              .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        this.setState(() => ({news: data.response.results}));
+        // console.log(this.state.news);
+        })
+      .catch(err => console.log(err))
   }
 
   showMoreInfo = (e) => {
-      console.log(e);
-      e.target.parentNode.classList.toggle('Blue');
-    const articleID = e.target.parentNode.parentNode.id;
+      // console.log(e.target);
+    const articleID = e.target.id;
+    const newsTriger = this.state.news.map(el => el.id === articleID ? {...el, isHosted: !el.isHosted} : el);
     const targetArticle = this.state.news.find(el => el.id === articleID);
-      console.log(targetArticle.apiUrl);
-      console.log(articleID);
+    this.setState(() => ({news: newsTriger}));
+      // console.log(articleID);
+      console.log(newsTriger);
+      // console.log(targetArticle);
+      // console.log(targetArticle.apiUrl);
+      // console.log(articleID);
+      // return;
     fetch(targetArticle.apiUrl+'?show-blocks=body&'+this.state.apiKey)
-              .then(res => res.json())
-              .then(data => {
-                console.log(data);
-                this.setState(() => ({article: data.response.content}));
-                console.log(this.state.article);
-                })
-              .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+        this.setState(prev => ({article: [...prev.article, data.response.content]}));
+      })
+      .catch(err => console.log(err))
+
+
   }
 
   render() {
@@ -47,7 +57,7 @@ class App extends Component {
           <h1 className="App-header-title">the guardian news</h1>
         </header>
         <main>
-          <button onClick={this.componentDidMount}>Refresh</button>
+          <button onClick={this.doFetch}>Refresh</button>
           {/* {console.log(news)} */}
           {news.length === 0 ? <p className="App-noNews">{ErrText}</p> : <NewsList news={news} article={article} showMoreInfo={this.showMoreInfo}/>}
         </main>
