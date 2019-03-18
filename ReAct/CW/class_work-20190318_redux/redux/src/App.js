@@ -13,9 +13,11 @@ class App extends Component {
     return (
       <div className="container">
        <p className="text">{value}</p>
-       <button onClick={decrease}>-</button>
-       <button onClick={reload}>Reset</button>
-       <button onClick={this.increaseFromInput}>+</button>
+       <div className="buttonConteiner">
+        <button onClick={decrease}>-3</button>
+        <button onClick={reload}>Reset</button>
+        <button onClick={this.increaseFromInput}>+input</button>
+       </div>
        <Form />
       </div>
     );
