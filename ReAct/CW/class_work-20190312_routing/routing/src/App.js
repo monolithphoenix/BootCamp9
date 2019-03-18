@@ -39,7 +39,7 @@ class App extends Component {
         <Route path='/Roadster' component={Roadster}/>
         <Route path='/ModelS' component={ModelS}/>
         <Route path='/ModelX' component={ModelX}/>
-        <Route path='/user' render= {props => <User userData = {user} {...props}/>}/>
+        <Route path='/user' render = {props => <User userData = {user} {...props}/>}/>
        </Switch>
       </div>
     );
