@@ -1,0 +1,7 @@
+.ContainerWeight {
+    height: 86vh;
+    width: 100vw;
+    background-color: var(--color-gray-main);
+        line-height: 88vh;
+        text-align: center;
+}

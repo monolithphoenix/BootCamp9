@@ -1,0 +1,35 @@
+.Preload {height: 100vh; width: 100vw; overflow: hidden;}
+
+.Preload_up,
+.Preload_down {
+    /* position: absolute; */
+    position: relative;
+}
+.Preload_up {
+    top: 0;
+    /* width: 100vw; */
+    height: 56vh;
+    background-image: url(../img/aktiBMIua001.png);
+    background-size: cover;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    /* transition-delay: 1s; */
+}
+.Preload_up.Hide {
+    transition-delay: 0s;
+    top: -30vh;
+}
+.Preload_down {
+    /* bottom: 0; */
+    /* bottom: -30vh; */
+    /* width: 100vw; */
+    height: 44vh;
+    background-image: url(../img/aktiBMIua002.png);
+    background-size: cover;
+    transition-duration: 2s;
+}
+.Preload_down.Hide {
+    transition-delay: 0s;
+    /* bottom: -44vh; */
+    height: 0;
+}

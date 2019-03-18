@@ -1,0 +1,8 @@
+.Frame {
+    border-radius: 2vw;
+    border: none;
+    box-shadow: 0 0 1vw 0.5vw var(--color-gray-dark);
+    padding: 2vw;
+    margin: 2vw;
+    background-color: #fff;
+}

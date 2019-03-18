@@ -1,2 +1,11 @@
-.App {}
+.App {width: 100vw;height: 100vh;}
 .App_preloader {}
+.intro {
+    height: 100vh;
+    transition-duration: 10s;
+    position: absolute;
+    top: 0;
+}
+.slideUp {
+    top: -200%;
+}

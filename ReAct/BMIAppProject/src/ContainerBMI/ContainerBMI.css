@@ -1,0 +1,10 @@
+.ContainerBMI {
+    /* height: 86vh; */
+    width: 100vw;
+    background-color: var(--color-gray-main);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+        /* line-height: 88vh;
+        text-align: center; */
+}

@@ -1,0 +1,60 @@
+.Registration{
+    opacity: 1;
+    width: 100vw;
+    height: 74vh;
+    /* margin-top: 24vh; */
+    margin-top: -30vh;
+    padding: 0 5vw;
+    transform: rotateX(0deg);
+    /* transition-delay: 0.5s; */
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    background-color: var(--color-gray-lite);
+}
+.Registration.Hide{
+    opacity: 0;
+    height: 0;
+    transform: rotateX(90deg);
+}
+.Registration_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.Registration_form__label {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vh 0;
+}
+.Registration_form input[type="number"],
+.Registration_form input[type="date"] {
+    width: 36vw;
+}
+.Registration_form input[type="number"]::placeholder,
+.Registration_form input[type="date"]::placeholder {
+    text-align: center;
+}
+.Registration_form input[type="number"],
+.Registration_form input[type="date"],
+.Label_radio {
+    height: 5vh;
+    background: #fff;
+    /* border: 1px solid var(--color-gray-text); */
+    outline: 1px solid var(--color-gray-text);
+}
+.Label_radio {
+    width: 18vw;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+input[type="radio"] {
+    display: none;
+}
+input[type="radio"]:checked + label{
+    background: var(--color-gray-dark);
+}
+.Registration_submitButton {
+    background-color: var(--color-green-main);
+    color: white;
+}

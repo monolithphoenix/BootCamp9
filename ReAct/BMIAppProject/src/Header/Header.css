@@ -1,0 +1,16 @@
+.Header {
+    width: 100vw;
+    height: 7vh;
+    background-color: var(--color-green-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Add-svg-icon {
+    width: 5vh;
+    height: 5vh;
+    margin: 0 2vh;
+}
+.Add-svg-icon path {
+fill: #ffffff;
+}
