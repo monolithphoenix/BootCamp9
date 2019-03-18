@@ -1,0 +1,87 @@
+1. Install Redux:
+        npm i react-redux
+        npm i redux
+
+2. Add folder 'redux' to 'src' folder.
+
+3. Create 'actions', 'redusers' and 'store' folders in 'redux' folder.
+
+4. In index.js:
+        import {Provider} from 'react-redux'
+            and wrap App in Provider + get prop store to Provider:
+                <Provider store={}>   <App />   </Provider>
+
+5. Create store.js in 'store' folder. 
+
+6. To import store write in this file next:
+        import {createStore} from 'redux'
+
+7. Сheck that REDUX_DEVTOOLS is installed and if it`s true plug in it to project(in store.js):
+        const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+8. Create store (in store.js):
+        const store = createStore({},devTools);
+
+9. Import store to index.js:
+        import store from './redux/store/store';
+            and put prop store:
+                <Provider store={store}>
+
+10. Create 2 files in redux/redusers:
+        index.js - file where all reducers combine in one object
+        counterReduser.js - file where we create field for global store
+
+11. Create reducer(for example counter) in counterReduser.js and export it. It may be looked like this:
+        function counter (state=0, action) {
+            switch (action.type) {
+                case 'PLUS':
+                    return state + 1;
+                case 'MINUS':
+                    return state - 1;
+                case 'RESET':
+                    return 0;
+                default:
+                    return state;
+            }
+        }
+        export default counter;
+
+12. Import reducer in index.js from counterReduser.js in next way:
+        import {combineRedusers} from 'redux';
+        import counter from './counterReducer';
+
+13. Create rootReducer that of combine all reduces to final object:
+        const rootReduser = combineRedusers({
+            counter,
+            ...,
+        })
+            And don't forget to export rootReduser ;)
+
+14. Import rootReducer from '../reducers' in store.js.
+
+15. Create variable 'store' in store.js with arguments 'rootReducer' and 'devTools'. It will be looked like this:
+        const store = createStore(rootReducer, devTools);
+
+16. Export 'store' variable:
+        export default store;
+
+17. Import 'store' in index and get it in props in Provider component.
+
+18. Create in 'src/redux/action' counterActions.js. Add variables for each of action. Variable is a function that return object with type of action. Example:
+        export const plus = () =>  ({
+            type: 'PLUS',
+        })
+
+19. Import action components where we want to use it. For example do it in App.js:
+        import {plus, minus, reset} from './redux/actions/counterActions';
+
+20. For connect App.js with  redux store write next one:
+        import {connect} from 'react-redux';
+
+21) Вся взаємодія між користувачем і програмою відбувається через екшени. Тому якщо ми хочемо міняти стейт через кліки чи інші події, то потрібно імпортувати екшени в компонент де буде відбуваєтися навішування на кнопки.
+22) Якщо ми хочемо підєднати компонент до store нам потрібно імпортнути в компонент метод connect з пакета react-redux.
+23) Створюємо ф-ю mapStateToProps яка приймає параметром store і повертає обєкт. В обєкті ми пишемо назву пропса за якою будемо звертатися до поля зі store в нашому компоненті.
+24) Створюємо ф-ю mapDispatchToProps яка приймає параметром метод dispatch який буде активувати наші екшени. Ця ф-я також повертає обєкт з полями в яких записані ф-ї що викликають метод dispatch() аргументами якого є екшени що імпортовані в компонент в пункті № 17.
+25) Щоб підєднати компонент до стора використовуємо метод connect що імпортували в компонент в пункті № 18. Цей метод приймає аргументами 2 ф-ї. Перший аргумент це ф-я mapStateToProps з пункта № 19 яка дає доступ компоненту до конкретного поля в глобальному стейті. Другий аргумент це ф-я mapDispatchToProps з пункта № 20, що дає доступ до активації екшенів через метод dispatch. Записується це так
+connect(mapStateToProps,mapDispatchToProps)(назва компонента);
+26) Після connect ми маєм доступ до полів стора і екшенів через пропси. В тупому компоненті через props. В розумному через this.props.
