@@ -67,7 +67,7 @@ function getAllUsers(event) {
     })
     .catch(err => console.log(err))
 
-  new Audio('.audio/NFF-good-tip-high.wav').play();
+  new Audio('./audio/NFF-good-tip-high.wav').play();
 }
 
 function getUserById(event) {
@@ -171,9 +171,8 @@ function updateUser(event) {
   });
 
   clearInputs();
-
+  new Audio('./audio/NFF-choice-good.wav').play();
   setTimeout(() => {
-    new Audio('./audio/NFF-choice-good.wav').play();
     getAllUsers(event);
   }, 500);
 }
