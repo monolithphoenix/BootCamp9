@@ -66,6 +66,8 @@ function getAllUsers(event) {
       };
     })
     .catch(err => console.log(err))
+
+  new Audio('.audio/NFF-good-tip-high.wav').play();
 }
 
 function getUserById(event) {
@@ -93,11 +95,11 @@ function getUserById(event) {
         <td>${data.data.id}</td>
         <td class='del'>DELETE</td>
         </tr>`;
-        new Audio('./audio/DemonicLaughter4.mp3').play();
+        
     })
     .catch(err => console.log(err))
 
-  new Audio('.audio/NFF-good-tip-high.wav').play();
+  new Audio('./audio/DemonicLaughter4.mp3').play();
 
   clearInputs();
 }
