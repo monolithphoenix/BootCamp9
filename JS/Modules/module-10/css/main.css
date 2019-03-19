@@ -11,7 +11,14 @@ body {
 	align-items: center;
 }
 
+.button-conteiner {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .mdc-btn {
+	width: 170px;
 	min-width: 88px;
 	height: 36px;
 	padding: 0 16px;
@@ -90,6 +97,7 @@ body {
 	text-align: left;
 	background-color: #4caf50;
 	color: white;
+	width: 50px;
 }
 .out-right {
 	position: relative;
@@ -102,15 +110,16 @@ body {
 	background: red;
     transition-duration: 1.5s;
 }
-.del {
+.del, .new {
 	color: #fff;
 	cursor: pointer;
 	font-size: 14px;
 	font-weight: 600;
 	text-align: center;
 	text-transform: uppercase;
-	background-color: #00796b;
 }
+.del {background-color: #00796b;}
 .del:hover {
 	background-color: #004c40;
 }
+.new {background-color: #4caf50;}

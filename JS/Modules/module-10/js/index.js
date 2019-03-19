@@ -97,6 +97,8 @@ function getUserById(event) {
     })
     .catch(err => console.log(err))
 
+  new Audio('.audio/NFF-good-tip-high.wav').play();
+
   clearInputs();
 }
 
@@ -124,18 +126,21 @@ function addUser(event) {
     }
   });
 
+  new Audio('./audio/dota_2_pudge_fresh_meat-namobilu.com.mp3').play();
+
   UserTable.innerHTML +=
     `<tr>
       <td>${UserName.value}</td>
       <td>${UserAge.value}</td>
       <td></td>
-      <td></td>
+      <td class='new'>New user</td>
     </tr>` 
 
   if (!UserName.hidden) {
     if (!UserAge.hidden) {UserAge.hidden=true};
     UserName.hidden=true;
   };
+
 
   clearInputs();
 }
@@ -166,6 +171,7 @@ function updateUser(event) {
   clearInputs();
 
   setTimeout(() => {
+    new Audio('./audio/NFF-choice-good.wav').play();
     getAllUsers(event);
   }, 500);
 }
