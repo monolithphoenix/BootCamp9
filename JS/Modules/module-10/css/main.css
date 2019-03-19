@@ -7,8 +7,9 @@ body {
 	padding: 20px;
 	margin: auto;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
+	min-width: fit-content;
 }
 
 .button-conteiner {
@@ -41,9 +42,9 @@ body {
 .mdc-btn:active {
 	box-shadow: 0 6px 4px 0 rgba(65, 65, 65, 0.3);
 }
-.mdc-btn:first-of-type {
-	/* margin-right: 12px; */
-}
+/* .mdc-btn:first-of-type {
+	margin-right: 12px;
+} */
 
 .search-form {
 	display: flex;
