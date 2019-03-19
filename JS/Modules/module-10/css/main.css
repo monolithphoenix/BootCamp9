@@ -73,9 +73,9 @@ body {
 .users-table {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
-	width: 90%;
-	max-width: 900px;
-	margin: 20px;
+	width: 100%;
+	max-width: 784px;
+	margin: 20px 0;
 }
 
 .users-table td,
