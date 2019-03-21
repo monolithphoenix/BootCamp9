@@ -6,6 +6,9 @@ import './Modal.css'
 
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import {saveContactCard} from '../redux/actions/saveContactCardAction';
+import {closeModal} from '../redux/actions/saveContactCardAction';
+
 
 const inputs = [
     {type: "text", name: "firstName", id: Date.now(), required: true, placeholder: "First name"},
@@ -15,9 +18,10 @@ const inputs = [
     {type: "email", name: "email", id: Date.now(), required: true, placeholder: "example@email.com"}
 ]
 
-const Modal = props => {
+const Modal = ({newCard, saveContactCard}) => {
+    // console.log(newCard);
     return (
-        <form action="" className="ModalForm">
+        <form action="" className="ModalForm" onSubmit={e => saveContactCard(e, newCard)}>
             <div className="ModalForm_conteiner">
                 <div className="ModalForm_inputs">
                     {inputs.map(el => <Input type={el.type} key={el.name+el.id} id={el.id} name={el.name} isRequired={el.required} pattern={el.pattern} placeholder={el.placeholder}/>)}
@@ -31,17 +35,19 @@ const Modal = props => {
 
 function MSTP (state) {
     return {
-        inputs: state.inputs,
+        newCard: state.lookWhatInInput,
     }
   }
   
-  function MDTP (dispatch) {
-    return {
-    //   showModal: function() {      
-    //     dispatch(showModal())
-    //   },
-    }
-  }
+  
+const MDTP = (dispatch) => ({ 
+    saveContactCard: (e, newCard) => { 
+        e.preventDefault();
+        dispatch(saveContactCard(newCard));
+        dispatch(closeModal());
+    },
+    // exit: dispatch(closeModal(),
+  })
 
 // Modal.propTypes = {
     
