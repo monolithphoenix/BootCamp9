@@ -21,7 +21,7 @@ class App extends Component {
         <modal className={modal? "modal show" : "modal hide"} onClick={closeModal}>
           {modal && <Modal/>}
         </modal>
-        {contactCardArray && "Working"}
+        {contactCardArray[0] && "Working"}
         <Button action={showModal} text="Create new contact"/>
       </div>
     );
