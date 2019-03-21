@@ -1,13 +1,3 @@
-/* .Modal {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .ModalForm {
     display: flex;
     align-items: center;
@@ -18,10 +8,10 @@
     padding: 2rem;
     height: 35vw;
     width: 70vw;
-    /* text-align: center; */
+    max-width: 700px;
+    max-height: 350px;
     background-color: rgb(255, 255, 255);
 }
-
 
 .ModalForm_conteiner {
     width: 100%;
@@ -33,7 +23,8 @@
     flex-direction: column;
     align-items: flex-start;
 }
-.ModalForm_inputs input{
-    font-size: calc(0.5rem + 1vw);
-    width: 15rem;
+
+.ModalForm_picture {
+    width: 150px;
+    height: 150px;
 }

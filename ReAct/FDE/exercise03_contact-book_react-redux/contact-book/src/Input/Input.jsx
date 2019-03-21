@@ -3,10 +3,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setInputValue} from '../redux/actions/setInputValue';
 
+import './Input.css';
+
 
 const Input = ({type, id, name, placeholder, isRequired, pattern, setInputValue}) => {
     return (
-        <input type={type} name={name} id={name+id} pattern={pattern} placeholder={placeholder} required={isRequired} onChange={setInputValue} />
+        <input className="Input" type={type} name={name} id={name+id} pattern={pattern} placeholder={placeholder} required={isRequired} onChange={setInputValue} />
     );
 };
 

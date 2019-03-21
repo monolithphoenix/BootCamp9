@@ -1,0 +1,16 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createButton {
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  transition-duration: .2s;
+}
+.createButton:hover {
+  box-shadow: 0 0 0.25rem 0 grey;
+  border-radius: 2rem;
+}

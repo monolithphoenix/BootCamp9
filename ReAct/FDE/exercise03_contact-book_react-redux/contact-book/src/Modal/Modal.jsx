@@ -21,14 +21,8 @@ const Modal = props => {
             <div className="ModalForm_conteiner">
                 <div className="ModalForm_inputs">
                     {inputs.map(el => <Input type={el.type} key={el.name+el.id} id={el.id} name={el.name} isRequired={el.required} pattern={el.pattern} placeholder={el.placeholder}/>)}
-                    
-                    {/* <input type="text" name="firstName" id={"firstName-"+Date.now()} required/>
-                    <input type="text" name="lastName" id="lastName" required />
-                    <input type="tel" name="tel" id="tel" required/>
-                    <input type="date" name="data" id="data" required/>
-                    <input type="email" name="email" id="email" required/> */}
                 </div>
-                <img src="http://virtual-strategy.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" width="150" height="150" alt="user_pic"/>
+                <img src="http://virtual-strategy.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="user_pic" className="ModalForm_picture"/>
             </div>
             <Button text="Add Contact"/>
         </form>
