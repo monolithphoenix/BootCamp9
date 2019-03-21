@@ -4,6 +4,7 @@ import {plus, minus, reset} from './redux/actions/counterActions';
 import {change} from './redux/actions/inputAction';
 import './App.css';
 import Form from './Form/Form';
+import Gallary from './Gallary/Gallary';
 
 class App extends Component {
   increaseFromInput = () => this.props.increase(Number(this.props.input));  
@@ -18,7 +19,8 @@ class App extends Component {
         <button onClick={reload}>Reset</button>
         <button onClick={this.increaseFromInput}>+input</button>
        </div>
-       <Form />
+       <Form/>
+       <Gallary/>
       </div>
     );
   }

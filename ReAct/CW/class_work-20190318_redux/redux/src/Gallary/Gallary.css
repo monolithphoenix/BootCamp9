@@ -1,0 +1,18 @@
+.Gallary {
+    margin-top: 2rem;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Gallary_conteiner {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(150px * 6);
+}
+/* .Gallary_conteiner img {
+    flex-basis: 25%;
+} */
