@@ -1,0 +1,51 @@
+.ContactCard {
+    position: relative;
+    width: 12rem;
+    height: 8rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid;
+    box-shadow: 2px 2px 2px 0px grey;
+    transition-duration: 0.2s;
+}
+
+.ContactCard:hover {
+    transform: scale(1.05);
+}
+
+.ContactCard_name {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.ContactCard_svg {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-right: 8px;
+    transition-property: fill;
+    transition-duration: 0.5s;
+}
+
+.ContactCard_svg:active {
+    transform: scale(0.95);
+}
+
+.edit {
+    top: 0;
+    right: 28px;
+}
+.delete {
+    top: 0;
+    right: 0;
+}
+
+.edit:hover {
+    fill: dodgerblue;
+    filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
+}
+.delete:hover {
+    fill: #f3323d;
+    filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
+}
+

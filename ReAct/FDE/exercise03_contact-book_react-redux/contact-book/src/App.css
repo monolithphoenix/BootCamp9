@@ -1,8 +1,12 @@
 .App {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.CCConteiner {
+  display: flex;
 }
 .modal {
   width: 100vw;

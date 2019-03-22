@@ -37,7 +37,7 @@ function MSTP (state) {
     return {
         newCard: state.lookWhatInInput,
     }
-  }
+}
   
   
 const MDTP = (dispatch) => ({ 
@@ -46,8 +46,7 @@ const MDTP = (dispatch) => ({
         dispatch(saveContactCard(newCard));
         dispatch(closeModal());
     },
-    // exit: dispatch(closeModal(),
-  })
+})
 
 // Modal.propTypes = {
     
