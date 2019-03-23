@@ -2,15 +2,22 @@
     font-size: 1rem;
     padding: 0.5rem 5rem;
     border: 1px solid black;
-    transition-duration: .2s;
+    transition-duration: .1s;
     outline: none;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    margin-top: 2px;
+
 }
 .Button:hover {
-    box-shadow: 0 0 1rem 0 grey;
+    /* box-shadow: 0 0 1rem 0 grey; */
+    margin-top: 0px;
+    margin-bottom: 2px;
+    box-shadow: 2px 2px 2px 0px grey;
 }
 
 .Button:active {
-    margin-bottom: 0;
-    box-shadow: 0 0 0.25rem 0 grey;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    box-shadow: none;
+    /* box-shadow: 0 0 0.25rem 0 grey; */
 }
