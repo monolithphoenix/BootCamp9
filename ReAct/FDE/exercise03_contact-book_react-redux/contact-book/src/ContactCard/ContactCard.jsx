@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import './ContactCard.css';
@@ -28,11 +28,11 @@ const ContactCard = ({data, deleteCC}) => {
 
 const MDTP = (dispatch) => ({ 
     deleteCC: (e) => { 
-        console.log(e.target.nodeName);
+        // console.log(e.target.nodeName);
         const id = (e.target.nodeName === "path" ? e.target.parentNode.dataset.id : e.target.dataset.id);
         console.log(id);
         dispatch(deleteCC(id));
     },
   })
 
-export default connect(MDTP) (ContactCard);
+export default connect(null, MDTP) (ContactCard);
