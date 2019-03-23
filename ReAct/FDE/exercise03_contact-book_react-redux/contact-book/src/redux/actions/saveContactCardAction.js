@@ -9,8 +9,8 @@ export const addContactCardsFromLocal = (obj) => ({
     type: "ADDCARDSFROMLOCAL",
     CardsArr: obj,
 })
-export const deleteCC = (el) => ({
+export const deleteCC = (id) => ({
     type: "DELCC",
-    id: el,
+    id,
 })
 
