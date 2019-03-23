@@ -13,9 +13,9 @@ import {closeModal, addContactCardsFromLocal} from './redux/actions/saveContactC
 class App extends Component {
 
   componentDidMount() {
-      console.log(JSON.parse(localStorage.getItem("contactCards")));
+    const readLocalStorage = JSON.parse(localStorage.getItem("contactCards"))
     let {CCfromLocal} = this.props;
-    CCfromLocal(JSON.parse(localStorage.getItem("contactCards")));
+    readLocalStorage && CCfromLocal(readLocalStorage);
   }
 
   render() {
