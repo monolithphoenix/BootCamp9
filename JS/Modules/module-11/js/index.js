@@ -146,3 +146,51 @@ const laptops = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
   },
 ];
+
+const filter = { size: [], color: [], release_date: [] };
+
+const form = document.querySelector('.js-form');
+const input = document.querySelectorAll('input');
+    
+
+form.addEventListener("change", sumFormFilter);
+form.addEventListener("submit", applyFilter);
+
+function sumFormFilter (e) {
+    // e.preventDefault();
+    // console.log(e.target.nodeName === "INPUT");
+    // console.log(e.target.checked);
+    // console.log(e.target.name);
+    // console.log(e.target.value);
+    // console.log(filter[e.target.name]);
+    // const A = filter[e.target.name];
+    // console.log(filter[e.target.name].includes(e.target.value));
+    
+    // !filter[e.target.name].includes(e.target.value) && (filter[e.target.name] = [...A, e.target.value]);
+    // console.log(filter[e.target.name]);
+};
+
+function applyFilter(e) {
+    e.preventDefault();
+    console.log("filter");
+    console.log(input);
+    console.log(input[0]);
+    console.log(input.map(el => el.checked));
+}
+
+function clearFilter() {
+    console.log("reset");
+    filter = { size: [], color: [], release_date: [] };
+}
+
+// Выведем список вида имя + фамилия
+const source = document.querySelector('#template').innerHTML.trim();
+const templateFunc = Handlebars.compile(source);
+// markup get to us HTML render
+const markup = templateFunc(laptops);
+    console.log(markup);
+// container select place for paste markup
+const container = document.querySelector('.content-placeholder');
+container.innerHTML = markup;
+
+console.log(container);
