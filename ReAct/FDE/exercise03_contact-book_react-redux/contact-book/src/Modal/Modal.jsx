@@ -10,15 +10,15 @@ import {saveContactCard} from '../redux/actions/saveContactCardAction';
 import {closeModal} from '../redux/actions/saveContactCardAction';
 
 
-const inputs = [
-    {type: "text", name: "firstName", id: Date.now(), required: true, placeholder: "First name"},
-    {type: "text", name: "lastName", id: Date.now(), required: true, placeholder: "Last name"},
-    {type: "tel", name: "tel", id: Date.now(), required: true, placeholder: "123-123-1234", pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"},
-    {type: "date", name: "date", id: Date.now(), required: true,},
-    {type: "email", name: "email", id: Date.now(), required: true, placeholder: "example@email.com"}
-]
+// const inputs = [
+//     {type: "text", name: "firstName", id: Date.now(), required: true, placeholder: "First name"},
+//     {type: "text", name: "lastName", id: Date.now(), required: true, placeholder: "Last name"},
+//     {type: "tel", name: "tel", id: Date.now(), required: true, placeholder: "123-123-1234", pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"},
+//     {type: "date", name: "date", id: Date.now(), required: true,},
+//     {type: "email", name: "email", id: Date.now(), required: true, placeholder: "example@email.com"}
+// ]
 
-const Modal = ({newCard, saveContactCard}) => {
+const Modal = ({inputs, newCard, saveContactCard}) => {
     // console.log(newCard);
     return (
         <form action="" className="ModalForm" onSubmit={e => saveContactCard(e, newCard)}>
