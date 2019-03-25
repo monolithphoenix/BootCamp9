@@ -1,3 +1,3 @@
-export const showModal = () => ({
-    type: 'SHOW',
+export const showAddModal = () => ({
+    type: 'ADDMODAL',
 })

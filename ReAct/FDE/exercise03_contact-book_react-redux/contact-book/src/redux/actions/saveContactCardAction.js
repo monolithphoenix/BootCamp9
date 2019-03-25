@@ -3,7 +3,7 @@ export const saveContactCard = (obj) => ({
     newCard: {...obj, id: Date.now()},
 })
 export const closeModal = () => ({
-    type: 'SHOW',
+    type: 'ADDMODAL',
 })
 export const addContactCardsFromLocal = (obj) => ({
     type: "ADDCARDSFROMLOCAL",
