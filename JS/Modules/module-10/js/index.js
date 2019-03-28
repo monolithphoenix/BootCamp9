@@ -19,7 +19,9 @@
   Сделать минимальный графический интерфейс в виде панели с полями и кнопками. 
   А так же панелью для вывода результатов операций с бэкендом.
 */
+
 "use strict"
+
 const URL = 'https://test-users-api.herokuapp.com/users/';
 const form = document.querySelector(".search-form");
 const UserTable = document.querySelector(".users-table");
@@ -95,7 +97,6 @@ function getUserById(event) {
         <td>${data.data.id}</td>
         <td class='del'>DELETE</td>
         </tr>`;
-        
     })
     .catch(err => console.log(err))
 
@@ -107,9 +108,9 @@ function getUserById(event) {
 function addUser(event) {
   event.preventDefault();
     console.log('addUser working now');
+  if(!UserID.hidden) {UserID.hidden=true};
   if (UserName.hidden) {
     if (UserAge.hidden) {
-      if(!UserID.hidden) {UserID.hidden=true};
       UserAge.hidden=false
     };
     return UserName.hidden=false;
@@ -136,13 +137,12 @@ function addUser(event) {
       <td>${UserAge.value}</td>
       <td></td>
       <td class='new'>New user</td>
-    </tr>` 
+    </tr>`;
 
   if (!UserName.hidden) {
     if (!UserAge.hidden) {UserAge.hidden=true};
     UserName.hidden=true;
   };
-
 
   clearInputs();
 }
@@ -174,7 +174,7 @@ function updateUser(event) {
   new Audio('./audio/NFF-choice-good.wav').play();
   setTimeout(() => {
     getAllUsers(event);
-  }, 500);
+  }, 1000);
 }
 
 function removeUser(event) {
@@ -182,7 +182,6 @@ function removeUser(event) {
   const userID = event.target.previousElementSibling.innerText;
 
   if (event.target.classList.contains('del')) {
-      // console.log(event.target.parentNode);
     event.target.style = 'background-color: transparent;'
     event.target.innerText = '<-----';
     new Audio('./audio/NOOO.mp3').play();
