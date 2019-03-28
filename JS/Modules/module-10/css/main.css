@@ -1,3 +1,9 @@
+@media (max-width: 500px) {
+	.input-conteiner {
+		display: grid;
+	}
+  }
+
 body {
 	font-family: "Roboto", sans-serif;
 	background: #fff;
@@ -11,13 +17,14 @@ body {
 	flex-direction: column;
 	min-width: fit-content;
 }
-
+.input-conteiner {
+	text-align: center;
+}
 .button-conteiner {
 	display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .mdc-btn {
 	width: 170px;
 	min-width: 88px;
@@ -42,10 +49,6 @@ body {
 .mdc-btn:active {
 	box-shadow: 0 6px 4px 0 rgba(65, 65, 65, 0.3);
 }
-/* .mdc-btn:first-of-type {
-	margin-right: 12px;
-} */
-
 .search-form {
 	display: flex;
 	flex-direction: column;
@@ -53,7 +56,6 @@ body {
 	padding: 20px;
 	box-shadow: 0 0 2px 2px rgba(65, 65, 65, 0.2);
 }
-
 .search-form input {
 	margin: 8px;
 	padding: 4px;
@@ -70,25 +72,22 @@ body {
 .search-form input:focus::placeholder {
 	color: transparent;
 }
-
 .users-table {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: calc(8px + 0.6vw);
 	border-collapse: collapse;
 	width: 100%;
 	max-width: 784px;
 	margin: 20px 0;
 }
-
 .users-table td,
 .users-table th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
-
 .users-table tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-
 .users-table tr:hover {
 	background-color: #ddd;
 }
@@ -102,7 +101,7 @@ body {
 }
 .out-right {
 	position: relative;
-    transform: translateX(-140%);
+    transform: translateX(-180%);
     transition-duration: 1.5s;
 	transition-timing-function: ease;
 	background: red;
