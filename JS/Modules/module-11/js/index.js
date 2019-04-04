@@ -172,10 +172,12 @@ function sumFormFilter (e) {
 
 function applyFilter(e) {
     e.preventDefault();
-    console.log("filter");
-    console.log(input);
-    console.log(input[0]);
-    console.log(input.map(el => el.checked));
+    // console.log("filter");
+    // console.log(input);
+    // console.log(input[0]);
+    const checkedInputs = [...input].filter(el => el.checked);
+    console.log(Object.keys(filter));
+    checkedInputs.map(el => filter[el.name].push(el.value) );
 }
 
 function clearFilter() {
