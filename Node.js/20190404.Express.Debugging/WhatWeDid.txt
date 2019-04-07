@@ -1,0 +1,3 @@
+12:50   npm run debug
+        In Chrome in address bar write next: chrome://inspect/#devices
+        In Target click on "inspect"
