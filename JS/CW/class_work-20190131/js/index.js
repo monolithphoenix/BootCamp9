@@ -6,7 +6,7 @@ let dayText = document.querySelector('.days')
 
 
 
-const deadline = new Date(2019, 2, 31, 12, 0, 0);
+const deadline = new Date(2019, 04, 24, 12, 0, 0);
 
 function timer() {
     let today = Date.now();
