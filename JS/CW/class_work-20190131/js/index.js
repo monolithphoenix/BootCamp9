@@ -22,9 +22,9 @@ function timer() {
     let day = Math.floor(delta / (1000*60*60*24));
         // console.log(day);
     secText.textContent = sec>9 || sec<0  ? sec : '0'+sec;
-    minText.textContent = min>9 ? min : '0'+min;
-    houText.textContent = hour>9 ? hour : '0'+hour;
-    dayText.textContent = day>9 ? day : '0'+day;
+    minText.textContent = min>9 || min<0 ? min : '0'+min;
+    houText.textContent = hour>9 || hour<0 ? hour : '0'+hour;
+    dayText.textContent = day>9 || day<0 ? day : '0'+day;
 }
 
 setInterval(timer,1000);
